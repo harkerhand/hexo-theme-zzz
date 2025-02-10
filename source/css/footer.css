@@ -1,0 +1,107 @@
+.footer {
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: #fff;
+    border-top: 3px solid #383838;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container .divider {
+    width: 75%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #6bbd00, transparent);
+    margin: 20px 0;
+}
+
+.about-us,.focus-us{
+    width: 70%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.about-us p {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+}
+
+.focus-us .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.focus-us .social-links li {
+    list-style: none;
+    margin: 0;
+}
+
+.focus-us .social-links span {
+    color: #ccc;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    margin-right: 8px;
+}
+
+.focus-us .social-links li a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(107, 189, 0, 0.1);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.focus-us .social-links li a:hover {
+    background: rgba(107, 189, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.focus-us .social-links li i {
+    font-size: 24px;
+    color: #6bbd00;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.focus-us .social-links li a:hover i {
+    color: #F1D801;
+}
+
+.copy-right {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-us, .focus-us {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .focus-us .social-links {
+        justify-content: center;
+    }
+    
+    .copy-right {
+        width: 90%;
+    }
+}

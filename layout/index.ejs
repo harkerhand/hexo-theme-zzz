@@ -1,0 +1,7 @@
+<div class="item-container" style="margin-top: 100px;">
+    <% page.posts.forEach(function(item, index){ %>
+        <%- partial('_partial/item-index', {item: item}) %>
+    <% }); %>
+</div>
+
+<script src="<%- url_for('js/masonry.js') %>"></script>

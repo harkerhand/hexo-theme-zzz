@@ -1,0 +1,64 @@
+/* 响应式设计 */
+@media (max-width: 768px) {
+	.navbar-menu {
+		display: none;
+	}
+	
+	.item-container {
+		width: 95%;
+		/* 移动端单列布局 */
+	}
+	
+	.index-item {
+		width: 100% !important;
+		position: relative !important;
+		left: 0 !important;
+		top: 0 !important;
+		margin-bottom: 20px;
+		/* 移动端恢复正常布局 */
+	}
+	
+	.content-container {
+		width: 95%;
+		padding: 20px;
+	}
+	
+	.navbar-brand {
+		font-size: 1.4rem;
+	}
+	
+	.main-video {
+		height: 60vh;
+	}
+	
+	.hovereffect {
+		height: 220px;
+	}
+	
+	.hovereffect .overlay-text {
+		font-size: 22px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	.item-container {
+		width: 95%;
+	}
+	
+	.index-item {
+		width: 300px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+	.item-container {
+		width: 92%;
+	}
+}
+
+@media (min-width: 1401px) {
+	.item-container {
+		width: 90%;
+		max-width: 1400px;
+	}
+}

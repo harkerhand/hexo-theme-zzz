@@ -1,0 +1,59 @@
+/* 全局基础样式 */
+body {
+	font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+	background-color: #000;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 绝区零风格滚动条 */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #2a2a2a;
+	border-radius: 5px;
+	width: 5px;
+}
+
+/* 使页面不被挤压（仅 Chrome 生效） */
+html {
+	overflow-y: overlay;
+}
+
+/* 表单元素样式 */
+input,
+textarea {
+	font-size: 0.8rem;
+	border: 2px solid #383838;
+	background: #1e1e1e;
+	color: #fff;
+	padding: 0.5rem 0.7rem;
+	margin: 5px 0;
+	transition: all 0.3s ease-in-out;
+	width: 100%;
+	border-radius: 8px;
+}
+
+input:focus,
+textarea:focus {
+	border-color: #6bbd00;
+	outline: none;
+	box-shadow: 0 0 8px rgba(107, 189, 0, 0.3);
+}
+
+/* 标题样式 */
+h1,
+h2,
+h3 {
+	font-family: 'Roboto', 'Microsoft YaHei', sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #fff;
+	text-shadow: -1.3px -1.3px 0 #414141, -1.3px 1.3px 0 #414141, 1.3px 1.3px 0 #414141;
+}

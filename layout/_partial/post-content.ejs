@@ -1,0 +1,46 @@
+<div class="img-container">
+  <img class="project-img" src="<%- config.root %><%- item.cover_image || theme.default_cover_image %>" 
+       alt="<%- item.title || theme.default_post_title || "无标题文档" %>">
+</div>
+
+<div class="content-container">
+  <div class="post-title">
+    <h1><%- item.title || theme.default_post_title || "无标题文档" %></h1>
+    
+    <!-- 添加文章元信息 -->
+    <div style="margin: 20px 0; padding: 15px; background: #333; border-radius: 10px; border-left: 4px solid #6bbd00;">
+      <% if (item.date) { %>
+        <div style="color: #ccc; margin-bottom: 8px;">
+          <i class="iconfont icon-time" style="margin-right: 8px; color: #6bbd00;"></i>
+          发布时间：<%- date(item.date, 'YYYY年MM月DD日') %>
+        </div>
+      <% } %>
+      <% if (item.updated) { %>
+        <div style="color: #ccc; margin-bottom: 8px;">
+          <i class="iconfont icon-edit" style="margin-right: 8px; color: #F1D801;"></i>
+          更新时间：<%- date(item.updated, 'YYYY年MM月DD日') %>
+        </div>
+      <% } %>
+      <% if (item.categories && item.categories.length > 0) { %>
+        <div style="color: #ccc;">
+          <i class="iconfont icon-folder" style="margin-right: 8px; color: #6bbd00;"></i>
+          分类：
+          <% item.categories.forEach(function(cat, index) { %>
+            <span style="color: #6bbd00; margin-right: 10px;"><%- cat.name %></span>
+          <% }); %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  
+  <div class="inner-content">
+    <%- item.content %>
+  </div>
+  
+  <!-- 添加返回按钮 -->
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="<%- config.root %>" style="display: inline-block; padding: 12px 30px; background: #6bbd00; color: #000; text-decoration: none; border-radius: 25px; font-weight: bold; transition: all 0.3s ease;">
+      ← 返回首页
+    </a>
+  </div>
+</div>

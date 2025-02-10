@@ -1,0 +1,61 @@
+<div class="index-item">
+  <div class="hovereffect">
+    <a href="<%- config.root %><%- item.path %>">
+      <img class="index-img" src="<%= (item.index_img || theme.default_cover_image).startsWith('http') ? (item.index_img || theme.default_cover_image).replace(/^\\/, '') : (config.root + (item.index_img || theme.default_cover_image).replace(/^\\/, '')) %>"
+        alt="<%- item.title || theme.default_post_title || "无标题文档" %>">
+      <div class="overlay">
+        <span class="overlay-text"><%- item.title || theme.default_post_title || "无标题文档" %></span>
+      </div>
+    </a>
+  </div>
+  <!-- 添加文章信息卡片底部 -->
+  <div class="card-info">
+    <h3 class="card-title">
+      <a href="<%- config.root %><%- item.path %>">
+        <%- item.title || theme.default_post_title || "无标题文档" %>
+      </a>
+    </h3>
+    <%
+      var itemDesc = item.description || item.excerpt || item.content || '暂无描述';
+      if (itemDesc && itemDesc !== '暂无描述') {
+        itemDesc = strip_html(itemDesc).substring(0, 50).trim().replace(/\s+/g, ' ');
+        if (itemDesc.length >= 50) itemDesc += '...';
+      }
+    %>
+    <% if (itemDesc && itemDesc !== '暂无描述') { %>
+      <p class="card-desc">
+        <a href="<%- config.root %><%- item.path %>">
+          <%- itemDesc %>
+        </a>
+      </p>
+    <% } %>
+    
+    <!-- 分类、标签和日期放在同一行 -->
+    <div class="card-meta-inline">
+      <% if (item.categories && item.categories.length > 0) { %>
+        <div class="card-categories">
+          <i class="iconfont icon-folder"></i>
+          <% item.categories.forEach(function(cat, index) { %>
+            <a href="<%- url_for('categories/' + cat.name + '/') %>" class="category-tag"><%- cat.name %></a>
+          <% }); %>
+        </div>
+      <% } %>
+      
+      <% if (item.tags && item.tags.length > 0) { %>
+        <div class="card-tags">
+          <i class="iconfont icon-tag"></i>
+          <% item.tags.each(function(tag) { %>
+            <a href="<%- url_for('tags/' + tag.name + '/') %>" class="tag-item"><%- tag.name %></a>
+          <% }); %>
+        </div>
+      <% } %>
+      
+      <% if (item.date) { %>
+        <div class="card-date">
+          <i class="iconfont icon-time"></i>
+          <%- date(item.date, 'YYYY-MM-DD') %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>

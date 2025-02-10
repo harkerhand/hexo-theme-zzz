@@ -1,0 +1,35 @@
+
+default_cover_image: images/zzz-loading.webp
+default_post_title: '无标题文档'
+url_root: '/'
+
+
+# Header
+menu:
+  '归档': /archives
+  '分类': /categories
+  '标签': /tags
+  '空洞调查协会': https://zenless.hoyoverse.com/
+  '关于': /about
+
+foot_about:
+  phone: '空洞调查协会热线'
+  address: '新艾利都市'
+
+media:
+  - icon: iconfont icon-github
+    link: 'https://github.com/harkerhand'
+    tip: 'GitHub'
+  - icon: iconfont icon-mail
+    link: 'mailto:contact@example.com'
+    tip: '邮箱'
+  - icon: iconfont icon-game
+    link: 'https://zenless.hoyoverse.com/'
+    tip: '绝区零官网'
+
+
+    
+iconfont:
+- //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
+- //at.alicdn.com/t/c/font_4823232_6grnmuy6d4c.css
+- //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css

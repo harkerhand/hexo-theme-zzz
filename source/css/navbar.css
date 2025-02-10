@@ -1,0 +1,66 @@
+/* 导航栏样式 */
+.navbar-container {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.95);
+	border-bottom: 3px solid #383838;
+	padding: 15px 0;
+	backdrop-filter: blur(10px);
+}
+
+.navbar {
+	width: 90%;
+	margin: 0 auto;
+	align-self: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-brand {
+	font-size: 1.8rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: #6bbd00;
+	transition: color 0.3s ease-in-out;
+	text-shadow: -1.3px -1.3px 0 #414141, -1.3px 1.3px 0 #414141, 1.3px 1.3px 0 #414141;
+}
+
+.navbar-brand:hover {
+	color: #F1D801;
+}
+
+.navbar-menu {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	background: #050505;
+	border-radius: 25px;
+	border: 3px solid #383838;
+	box-shadow: 0 0 0 1px rgba(255,255,255,.1), inset 0 0 4px rgba(0,0,0,1);
+}
+
+.nav-item {
+	margin: 0;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 12px 24px;
+	border-radius: 25px;
+	transition: all 0.3s ease-in-out;
+	display: block;
+	position: relative;
+	font-style: italic;
+}
+
+.nav-link:hover {
+	color: #808080;
+	background-color: rgba(107, 189, 0, 0.1);
+}
