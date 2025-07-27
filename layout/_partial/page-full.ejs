@@ -1,6 +1,7 @@
-<% if (item.cover_image){ %>
+<% if (item.banner_img){ %>
+  <% console.log('Banner image found:', item.banner_img); %>
   <div class="img-container">
-    <img class="page-img" src="<%- config.root %><%- item.cover_image %>" alt="<%- item.title || 'Untitled' %>">
+    <img class="page-img" src="<%= (item.banner_img || theme.default_cover_image).startsWith('http') ? (item.banner_img || theme.default_cover_image).replace(/^\\/, '') : (config.root + (item.banner_img || theme.default_cover_image).replace(/^\\/, '')) %>" alt="<%- item.title || 'Untitled' %>">
   </div>
   <% } %>
   

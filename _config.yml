@@ -1,5 +1,5 @@
 
-default_cover_image: images/zzz-loading.webp
+default_cover_image: img/background.jpg
 default_post_title: '无标题文档'
 url_root: '/'
 
