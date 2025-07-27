@@ -20,16 +20,99 @@
 }
 
 .navbar-brand {
-	font-size: 1.8rem;
-	font-weight: bold;
 	text-decoration: none;
-	color: #6bbd00;
-	transition: color 0.3s ease-in-out;
-	text-shadow: -1.3px -1.3px 0 #414141, -1.3px 1.3px 0 #414141, 1.3px 1.3px 0 #414141;
+	transition: transform 0.3s ease-in-out;
 }
 
 .navbar-brand:hover {
-	color: #F1D801;
+	transform: scale(1.05);
+}
+
+/* 用户信息卡片样式 */
+.author {
+	display: flex;
+	align-items: center;
+	padding: 4px;
+	background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+	border-radius: 30px;
+	border: 2px solid #383838;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	min-width: 280px;
+}
+
+.avatar {
+	margin-right: 12px;
+	margin-left: 4px;
+}
+
+.avatar img {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 2px solid #000000;
+	object-fit: cover;
+}
+
+.info {
+	flex: 1;
+	margin-right: 12px;
+}
+
+.username {
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 4px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.exp-bar {
+	position: relative;
+	height: 12px;
+	background-color: #000000;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid #555;
+}
+
+.exp-progress {
+	height: 100%;
+	background: linear-gradient(90deg, #0045bd 0%, #01a1f1 100%);
+	border-radius: 6px;
+	transition: width 0.3s ease;
+}
+
+.exp-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 10px;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.level {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 4px 8px;
+	border-radius: 8px;
+}
+
+.level-number {
+	color: #ffffff;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.level-label {
+	color: #ffffff;
+	font-size: 8px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
 }
 
 .navbar-menu {

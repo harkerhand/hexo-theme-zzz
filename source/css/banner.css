@@ -1,0 +1,92 @@
+/* Banner 组件样式 */
+.banner-component {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.banner-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, var(--mask-alpha, 0.4));
+  z-index: 2;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  color: white;
+  max-width: 90%;
+}
+
+.banner-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #6bbd00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0 0 1rem 0;
+}
+
+.banner-subtitle {
+  font-size: 1.4rem;
+  color: #F1D801;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .banner-component {
+    height: 40vh;
+  }
+  
+  .banner-title {
+    font-size: 2rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-component {
+    height: 30vh;
+  }
+  
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+}

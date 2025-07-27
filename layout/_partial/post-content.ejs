@@ -1,12 +1,18 @@
+<%
+item.title = item.title || theme.default_post_title || "无标题文档";
+item.subtitle = item.subtitle || item.title
+item.banner_img = item.banner_img ? (config.root + item.banner_img) : theme.post.banner_img;
+%>
+
 <div class="img-container">
   <img class="project-img" src="<%- item.banner_img %>" 
-       alt="<%- item.title || theme.default_post_title || "无标题文档" %>">
+       alt="<%- item.title %>">
 </div>
 
 <div class="content-container">
   <div class="post-title">
-    <h1><%- item.title || theme.default_post_title || "无标题文档" %></h1>
-    
+    <h1><%- item.title %></h1>
+
     <!-- 添加文章元信息 -->
     <div style="margin: 20px 0; padding: 15px; background: #333; border-radius: 10px; border-left: 4px solid #6bbd00;">
       <% if (item.date) { %>

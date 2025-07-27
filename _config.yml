@@ -28,6 +28,14 @@ media:
     link: 'https://zenless.hoyoverse.com/'
     tip: '绝区零官网'
 
+# 用户信息卡片配置
+author_info:
+  avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=2097853195&spec=4'
+  level: 60
+  exp_current: 114514
+  exp_total: 9999999
+  exp_percentage: 11.45
+
 # 图标字体
 iconfont:
   - //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css

@@ -1,5 +1,22 @@
 <nav class="navbar">
-  <a class="navbar-brand" href="<%- config.root %>"><%-config.title || ""%></a>
+  <a class="navbar-brand" href="<%- config.root %>">
+    <div class="author">
+      <div class="avatar">
+        <img src="<%- theme.author_info.avatar || 'https://q.qlogo.cn/headimg_dl?dst_uin=2097853195&spec=4' %>" alt="User Avatar">
+      </div>
+      <div class="info">
+        <div class="username"><%- config.author || config.title || "博主" %></div>
+        <div class="exp-bar">
+          <div class="exp-progress" style="width:<%- theme.author_info.exp_percentage || '96.48' %>%;"></div>
+          <div class="exp-text"><%- theme.author_info.exp_current || '7395' %>/<%- theme.author_info.exp_total || '7665' %></div>
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-number"><%- theme.author_info.level || '20' %></div>
+        <div class="level-label">LEVEL</div>
+      </div>
+    </div>
+  </a>
   <ul class="navbar-menu">
     <% for (var i in theme.menu){ %>
       <li class="nav-item">

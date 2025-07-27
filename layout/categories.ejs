@@ -4,15 +4,12 @@ page.subtitle = theme.category && theme.category.subtitle || '文章分类'
 page.banner_img = theme.category && theme.category.banner_img || theme.default_cover_image
 %>
 
-<!-- Banner -->
-<div class="banner" style="background-image: url('<%= page.banner_img %>');">
-  <div class="banner-content">
-    <h1 class="banner-title"><%= page.title %></h1>
-    <% if (page.subtitle) { %>
-      <p class="banner-subtitle"><%= page.subtitle %></p>
-    <% } %>
-  </div>
-</div>
+<!-- Banner Component -->
+<%- partial('_partial/banner', {
+  title: page.title,
+  subtitle: page.subtitle,
+  banner_img: config.root + page.banner_img
+}) %>
 
 <!-- Categories Content -->
 <div class="content-container">

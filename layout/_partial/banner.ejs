@@ -1,0 +1,44 @@
+<%
+// Banner 组件
+// 参数：
+//   title - 标题
+//   subtitle - 副标题
+//   banner_img - 背景图片URL
+//   banner_height - banner高度（可选，默认使用CSS控制）
+//   mask_alpha - 遮罩透明度（可选）
+
+var title = locals.title || page.title || '';
+var subtitle = locals.subtitle || page.subtitle || '';
+var banner_img = locals.banner_img || page.banner_img || theme.default_cover_image;
+var banner_height = locals.banner_height || '';
+var mask_alpha = locals.mask_alpha || '';
+
+// 构建style属性
+var styleAttributes = [];
+if (banner_img) {
+  styleAttributes.push('background-image: url(\'' + banner_img + '\')');
+}
+if (banner_height) {
+  styleAttributes.push('height: ' + banner_height);
+}
+if (mask_alpha) {
+  styleAttributes.push('--mask-alpha: ' + mask_alpha);
+}
+
+var styleAttr = styleAttributes.length > 0 ? ' style="' + styleAttributes.join('; ') + '"' : '';
+%>
+
+<!-- Banner Component -->
+<div class="banner-component">
+  <div class="banner-background"<%- styleAttr %>>
+    <img src="<%= banner_img %>" alt="<%= title %>" class="banner-img">
+  </div>
+  <div class="banner-content">
+    <% if (title) { %>
+      <h1 class="banner-title"><%= title %></h1>
+    <% } %>
+    <% if (subtitle) { %>
+      <p class="banner-subtitle"><%= subtitle %></p>
+    <% } %>
+  </div>
+</div>

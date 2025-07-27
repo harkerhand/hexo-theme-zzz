@@ -4,6 +4,37 @@
 		display: none;
 	}
 	
+	/* 移动端用户信息卡片优化 */
+	.author {
+		min-width: auto;
+		padding: 6px 8px;
+	}
+	
+	.avatar img {
+		width: 36px;
+		height: 36px;
+	}
+	
+	.username {
+		font-size: 0.9rem;
+	}
+	
+	.exp-bar {
+		height: 10px;
+	}
+	
+	.exp-text {
+		font-size: 8px;
+	}
+	
+	.level-number {
+		font-size: 1rem;
+	}
+	
+	.level-label {
+		font-size: 7px;
+	}
+	
 	.item-container {
 		width: 95%;
 		/* 移动端单列布局 */

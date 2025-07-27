@@ -1,6 +1,11 @@
+<%
+item.subtitle = item.subtitle || item.title
+item.banner_img = item.banner_img || theme.post.banner_img
+%>
+
 <% if (item.banner_img){ %>
   <div class="img-container">
-    <img class="page-img" src="<%= (item.banner_img).startsWith('http') ? (item.banner_img).replace(/^\\/, '') : item.banner_img %>" alt="<%- item.title || 'Untitled' %>">
+    <img class="item-img" src="<%= (item.banner_img).startsWith('http') ? (item.banner_img).replace(/^\\/, '') : item.banner_img %>" alt="<%- item.title || 'Untitled' %>">
   </div>
   <% } %>
   

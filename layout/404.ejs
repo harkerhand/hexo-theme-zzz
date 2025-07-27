@@ -4,15 +4,12 @@ page.subtitle = theme.page404 && theme.page404.subtitle || '抱歉，您访问�
 page.banner_img = theme.page404 && theme.page404.banner_img || theme.default_cover_image
 %>
 
-<!-- Banner -->
-<div class="banner" style="background-image: url('<%= page.banner_img %>');">
-  <div class="banner-content">
-    <h1 class="banner-title"><%= page.title %></h1>
-    <% if (page.subtitle) { %>
-      <p class="banner-subtitle"><%= page.subtitle %></p>
-    <% } %>
-  </div>
-</div>
+<!-- Banner Component -->
+<%- partial('_partial/banner', {
+  title: page.title,
+  subtitle: page.subtitle,
+  banner_img: page.banner_img
+}) %>
 
 <!-- 404 Content -->
 <div class="content-container">
