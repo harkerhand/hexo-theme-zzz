@@ -186,15 +186,3 @@ page404:
   banner_mask_alpha: 0.3
   redirect_delay: 5000
 
-
-# 页脚
-footer:
-  copyright: "© 2024 Travel Theme"
-  powered_by: true
-  theme_info: true
-  content: "<a href=\"https://hexo.io\" target=\"_blank\" rel=\"nofollow noopener\"><span>Hexo</span></a><i class=\"iconfont icon-love\"></i>
-    <a href=\"https://github.com/harkerhand/hexo-theme-travel\" target=\"_blank\" rel=\"nofollow noopener\"><span>Travel</span></a>
-    <a href=\"https://hexo.io\" target=\"_blank\" rel=\"nofollow noopener\"><span>Hexo</span></a>
-    <i class=\"iconfont icon-love\"></i>
-    <a href=\"https://github.com/harkerhand/hexo-theme-travel\" target=\"_blank\" rel=\"nofollow noopener\"><span>Travel</span></a>
-  "
