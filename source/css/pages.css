@@ -1,0 +1,352 @@
+/* 页面通用样式 */
+
+/* Banner 样式 */
+.banner {
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.banner-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #6bbd00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.banner-subtitle {
+  font-size: 1.4rem;
+  color: #F1D801;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Tags 页面样式 */
+.tag-cloud {
+  text-align: center;
+  padding: 2rem;
+}
+
+.tag-item {
+  display: inline-block;
+  margin: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #6bbd00 0%, #F1D801 100%);
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #383838;
+  font-weight: bold;
+}
+
+.tag-item:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(107, 189, 0, 0.4);
+  text-decoration: none;
+  color: #000;
+  background: linear-gradient(135deg, #F1D801 0%, #6bbd00 100%);
+}
+
+.tag-count {
+  font-size: 0.8em;
+  opacity: 0.8;
+  margin-left: 0.5rem;
+}
+
+/* Categories 页面样式 */
+.category-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.category-item {
+  margin-bottom: 2.5rem;
+  background: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 4px solid #383838;
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  border-color: #6bbd00;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(107, 189, 0, 0.2);
+}
+
+.category-name {
+  background: linear-gradient(135deg, #6bbd00 0%, #F1D801 100%);
+  color: #000;
+  margin: 0;
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.category-name a {
+  color: #000;
+  text-decoration: none;
+}
+
+.category-count {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-left: 0.5rem;
+}
+
+.category-posts {
+  padding: 1.5rem 2rem;
+}
+
+.category-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #383838;
+  transition: all 0.3s ease;
+}
+
+.category-post:last-child {
+  border-bottom: none;
+}
+
+.category-post:hover {
+  background: rgba(107, 189, 0, 0.1);
+  padding-left: 1rem;
+  border-radius: 8px;
+}
+
+.category-post a {
+  color: #e0e0e0;
+  text-decoration: none;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.category-post a:hover {
+  color: #6bbd00;
+}
+
+.post-date {
+  color: #888;
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+
+.category-more {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #383838;
+}
+
+.category-more a {
+  color: #F1D801;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.category-more a:hover {
+  color: #6bbd00;
+}
+
+/* 404 页面样式 */
+.error-content {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #6bbd00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.error-message h2 {
+  font-size: 2.5rem;
+  color: #F1D801;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.error-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-home,
+.btn-back {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #6bbd00 0%, #F1D801 100%);
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid #383838;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-home:hover,
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 189, 0, 0.4);
+  text-decoration: none;
+  color: #000;
+  background: linear-gradient(135deg, #F1D801 0%, #6bbd00 100%);
+}
+
+/* Links 页面样式 */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.link-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  border: 4px solid #383838;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.link-card:hover {
+  border-color: #6bbd00;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(107, 189, 0, 0.2);
+}
+
+.link-content {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.link-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #6bbd00;
+  object-fit: cover;
+}
+
+.link-info {
+  flex: 1;
+}
+
+.link-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #6bbd00;
+  margin-bottom: 0.5rem;
+}
+
+.link-intro {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.links-custom {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 4px solid #383838;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .banner {
+    height: 50vh;
+  }
+  
+  .banner-title {
+    font-size: 2.2rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .error-code {
+    font-size: 5rem;
+  }
+  
+  .error-message h2 {
+    font-size: 2rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-item,
+  .link-card {
+    margin: 1rem;
+  }
+  
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .link-content {
+    padding: 1rem;
+  }
+  
+  .link-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}

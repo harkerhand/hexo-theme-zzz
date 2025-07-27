@@ -1,0 +1,41 @@
+<%
+page.title = theme.page404 && theme.page404.title || '页面未找到'
+page.subtitle = theme.page404 && theme.page404.subtitle || '抱歉，您访问的页面不存在'
+page.banner_img = theme.page404 && theme.page404.banner_img || theme.default_cover_image
+%>
+
+<!-- Banner -->
+<div class="banner" style="background-image: url('<%= page.banner_img %>');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1 class="banner-title"><%= page.title %></h1>
+    <% if (page.subtitle) { %>
+      <p class="banner-subtitle"><%= page.subtitle %></p>
+    <% } %>
+  </div>
+</div>
+
+<!-- 404 Content -->
+<div class="content-container">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <div class="error-message">
+      <h2>页面未找到</h2>
+      <p>抱歉，您访问的页面不存在或已被移除。</p>
+      <div class="error-actions">
+        <a href="<%= url_for('/') %>" class="btn-home">返回首页</a>
+        <a href="javascript:history.back()" class="btn-back">返回上页</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function redirect() {
+    location.href = "<%- url_for('/') %>";
+  }
+
+  <% if (theme.page404 && theme.page404.redirect_delay) { %>
+    setTimeout(redirect, <%= parseInt(theme.page404.redirect_delay) %>);
+  <% } %>
+</script>

@@ -1,21 +1,27 @@
 <%
 page.title = theme.tag && theme.tag.title || '标签'
 page.subtitle = theme.tag && theme.tag.subtitle || '标签云'
+page.banner_img = theme.tag && theme.tag.banner_img || theme.default_cover_image
 %>
 
-<div class="page-header">
-  <h1 class="page-title"><%= page.title %></h1>
-  <% if (page.subtitle) { %>
-    <p class="page-subtitle"><%= page.subtitle %></p>
-  <% } %>
+<!-- Banner -->
+<div class="banner" style="background-image: url('<%= page.banner_img %>');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1 class="banner-title"><%= page.title %></h1>
+    <% if (page.subtitle) { %>
+      <p class="banner-subtitle"><%= page.subtitle %></p>
+    <% } %>
+  </div>
 </div>
 
-<div class="page-content">
+<!-- Tags Content -->
+<div class="content-container">
   <div class="tag-cloud">
     <% site.tags.each(function(tag) { %>
       <% if (tag.posts.length > 0) { %>
         <a href="<%= url_for(tag.path) %>" class="tag-item" 
-           style="font-size: <%= Math.min(20, Math.max(12, 12 + tag.posts.length * 2)) %>px;">
+           style="font-size: <%= Math.min(24, Math.max(14, 14 + tag.posts.length * 2)) %>px;">
           <%= tag.name %>
           <span class="tag-count">(<%= tag.posts.length %>)</span>
         </a>
@@ -25,27 +31,48 @@ page.subtitle = theme.tag && theme.tag.subtitle || '标签云'
 </div>
 
 <style>
-.page-header {
-  text-align: center;
-  padding: 2rem 0;
+.banner {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
   margin-bottom: 2rem;
 }
 
-.page-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.page-subtitle {
-  font-size: 1.2rem;
-  color: #666;
+.banner-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.banner-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
   margin: 0;
+}
+
+.content-container {
+  padding: 0 2rem;
 }
 
 .tag-cloud {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .tag-item {

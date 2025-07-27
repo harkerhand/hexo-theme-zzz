@@ -1,13 +1,26 @@
 <%
 page.title = theme.about && theme.about.title || '关于'
 page.subtitle = theme.about && theme.about.subtitle || '关于我'
+page.banner_img = theme.about && theme.about.banner_img || theme.default_cover_image
 %>
 
-<div class="about-page">
+<!-- Banner -->
+<div class="banner" style="background-image: url('<%= page.banner_img %>');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1 class="banner-title"><%= page.title %></h1>
+    <% if (page.subtitle) { %>
+      <p class="banner-subtitle"><%= page.subtitle %></p>
+    <% } %>
+  </div>
+</div>
+
+<!-- About Content -->
+<div class="content-container">
   <div class="about-header">
     <% if (theme.about && theme.about.avatar) { %>
       <div class="about-avatar">
-        <img src="<%= theme.about.avatar %>" alt="Avatar">
+        <img src="<%= url_for(theme.about.avatar) %>" alt="Avatar">
       </div>
     <% } %>
     <h1 class="about-name"><%= theme.about && theme.about.name || config.author %></h1>
@@ -21,7 +34,7 @@ page.subtitle = theme.about && theme.about.subtitle || '关于我'
           <% if (icon.qrcode) { %>
             <span class="about-icon qr-trigger">
               <i class="<%= icon.class %>"></i>
-              <img class="qr-img" src="<%= icon.qrcode %>" alt="QR Code">
+              <img class="qr-img" src="<%= url_for(icon.qrcode) %>" alt="QR Code">
             </span>
           <% } else { %>
             <a href="<%= icon.link %>" target="_blank" class="about-icon" 
@@ -35,32 +48,68 @@ page.subtitle = theme.about && theme.about.subtitle || '关于我'
   </div>
   
   <div class="about-content">
-    <%- page.content %>
+    <div class="inner-content">
+      <%- page.content %>
+    </div>
   </div>
 </div>
 
 <style>
-.about-page {
+.banner {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 2rem;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.banner-title {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.content-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
 }
 
 .about-header {
   text-align: center;
-  padding: 2rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .about-avatar {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .about-avatar img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 4px solid white;
+  object-fit: cover;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 

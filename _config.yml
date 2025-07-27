@@ -10,16 +10,11 @@ logo: /images/logo.png
 # 导航菜单
 menu:
   '首页': /
-  '归档': /archives/
   '分类': /categories/
   '标签': /tags/
   '关于': /about/
-  '空洞调查协会': https://zenless.hoyoverse.com/
+  '友链': /links/
 
-# 页脚设置
-foot_about:
-  phone: '空洞调查协会热线'
-  address: '新艾利都市'
 
 # 社交媒体
 media:
@@ -120,7 +115,7 @@ fun_features:
 
 # 文章配置
 post:
-  banner_img: /img/default.png
+  banner_img: /img/background.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
   
@@ -190,16 +185,15 @@ about:
   enable: true
   title: "关于"
   subtitle: "关于我"
-  banner_img: /img/default.png
+  banner_img: /img/background.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  name: "Travel Blog"
-  intro: "一个优雅的旅行博客主题"
-  avatar: /images/avatar.png
+  name: "ZZZ Blog"
+  intro: "一个绝区零风格的博客主题"
+  avatar: /img/logo_circle.png
   icons:
-    - { class: "iconfont icon-github", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-email", link: "mailto:example@email.com", tip: "邮箱" }
-    - { class: "iconfont icon-wechat", qrcode: "/images/wechat-qr.png" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
+    - { class: "iconfont icon-mail", link: "mailto:harkerhand@outlook.com", tip: "邮箱" }
 
 # 友链页
 links:
@@ -226,13 +220,6 @@ page404:
   banner_mask_alpha: 0.3
   redirect_delay: 5000
 
-# 归档页面
-archive:
-  title: "归档"
-  subtitle: "时间轴"
-  banner_img: /img/default.png
-  banner_img_height: 60
-  banner_mask_alpha: 0.3
 
 # 页脚
 footer:
@@ -244,35 +231,3 @@ footer:
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
   '
-
-# 第三方服务
-# 评论系统
-comments:
-  enable: false
-  type: # valine | disqus | gitalk 等
-
-# 统计
-web_analytics:
-  enable: false
-  follow_dnt: true
-  google:
-    measurement_id:
-  baidu:
-  leancloud:
-    app_id:
-    app_key:
-    server_url:
-
-# 滚动箭头
-scroll_down_arrow:
-  enable: true
-  banner_height_limit: 80
-  scroll_after_turning_page: true
-
-scroll_top_arrow:
-  enable: true
-
-# 其他设置
-# 开发模式
-development:
-  enable: false

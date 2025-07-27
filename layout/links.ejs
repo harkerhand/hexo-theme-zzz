@@ -1,0 +1,50 @@
+<%
+page.title = theme.links && theme.links.title || '友链'
+page.subtitle = theme.links && theme.links.subtitle || '朋友们'
+page.banner_img = theme.links && theme.links.banner_img || theme.default_cover_image
+%>
+
+<!-- Banner -->
+<div class="banner" style="background-image: url('<%= page.banner_img %>');">
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <h1 class="banner-title"><%= page.title %></h1>
+    <% if (page.subtitle) { %>
+      <p class="banner-subtitle"><%= page.subtitle %></p>
+    <% } %>
+  </div>
+</div>
+
+<!-- Links Content -->
+<div class="content-container">
+  <div class="links-grid">
+    <% if (theme.links && theme.links.items) { %>
+      <% theme.links.items.forEach(function(item) { %>
+        <% if (item.title && item.link) { %>
+          <div class="link-card">
+            <a href="<%= url_for(item.link) %>" target="_blank" class="link-content">
+              <% if (item.avatar) { %>
+                <div class="link-avatar">
+                  <img src="<%= url_for(item.avatar) %>" alt="<%= item.title %>"
+                       onerror="this.src='<%= url_for(theme.links.onerror_avatar || '/img/avatar.png') %>'">
+                </div>
+              <% } %>
+              <div class="link-info">
+                <div class="link-title"><%= item.title %></div>
+                <% if (item.intro) { %>
+                  <div class="link-intro"><%= item.intro %></div>
+                <% } %>
+              </div>
+            </a>
+          </div>
+        <% } %>
+      <% }); %>
+    <% } %>
+  </div>
+
+  <% if (theme.links && theme.links.custom && theme.links.custom.enable && theme.links.custom.content) { %>
+    <div class="links-custom">
+      <%- theme.links.custom.content %>
+    </div>
+  <% } %>
+</div>

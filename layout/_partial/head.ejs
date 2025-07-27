@@ -27,13 +27,21 @@
   <% } %>
 
   <!-- Custom CSS -->
+  <!-- ZZZ Theme Styles -->
   <%- css('css/base.css') %>
   <%- css('css/navbar.css') %>
+  <%- css('css/banner.css') %>
   <%- css('css/card.css') %>
   <%- css('css/content.css') %>
-  <%- css('css/animations.css') %>
-  <%- css('css/responsive.css') %>
   <%- css('css/footer.css') %>
+  <%- css('css/responsive.css') %>
+  <%- css('css/animations.css') %>
+  <%- css('css/pages.css') %>
+  
+  <!-- Page specific styles -->
+  <% if (is_page() && page.layout === 'about') { %>
+    <%- css('css/about.css') %>
+  <% } %>
   
   <% if (theme.custom_css) { %>
     <%- css(theme.custom_css) %>
