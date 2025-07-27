@@ -81,11 +81,10 @@ index:
   # 首页Banner图
   banner_img: /img/default.png
   banner_img_height: 100
-  banner_mask_alpha: 0.3
 
-# 横幅配置
+# 横幅配置 - 移除视差效果
 banner:
-  parallax: true
+  parallax: false  # 关闭视差滚动
   width_height_ratio: 1.0
 
 # 一些好玩的功能
@@ -152,34 +151,6 @@ post:
       enable: false
       source: "busuanzi"
 
-# 标签页
-tag:
-  enable: true
-  title: "标签"
-  subtitle: "标签云"
-  banner_img: /img/default.png
-  banner_img_height: 80
-  banner_mask_alpha: 0.3
-  tagcloud:
-    min_font: 15
-    max_font: 30
-    unit: px
-    start_color: "#BBBBEE"
-    end_color: "#337ab7"
-
-# 分类页
-category:
-  enable: true
-  title: "分类"
-  subtitle: "文章分类"
-  banner_img: /img/default.png
-  banner_img_height: 60
-  banner_mask_alpha: 0.3
-  order_by: "-length"
-  collapse_depth: 0
-  post_order_by: "-date"
-  post_limit: 10
-
 # 关于页
 about:
   enable: true
@@ -187,7 +158,6 @@ about:
   subtitle: "关于我"
   banner_img: /img/background.png
   banner_img_height: 60
-  banner_mask_alpha: 0.3
   name: "ZZZ Blog"
   intro: "一个绝区零风格的博客主题"
   avatar: /img/logo_circle.png
@@ -202,13 +172,38 @@ links:
   subtitle: "朋友们"
   banner_img: /img/default.png
   banner_img_height: 60
-  banner_mask_alpha: 0.3
   items:
     - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/images/hexo.png" }
   onerror_avatar: /img/avatar.png
   custom:
     enable: false
     content: ''
+
+# 分类页
+category:
+  enable: true
+  title: "分类"
+  subtitle: "文章分类"
+  banner_img: /img/default.png
+  banner_img_height: 60
+  order_by: "-length"
+  collapse_depth: 0
+  post_order_by: "-date"
+  post_limit: 10
+
+# 标签页
+tag:
+  enable: true
+  title: "标签"
+  subtitle: "标签云"
+  banner_img: /img/default.png
+  banner_img_height: 80
+  tagcloud:
+    min_font: 15
+    max_font: 30
+    unit: px
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"
 
 # 404页面
 page404:
@@ -230,4 +225,9 @@ footer:
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
+  '
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
+  '
   '

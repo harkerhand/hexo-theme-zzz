@@ -6,7 +6,6 @@ page.banner_img = theme.about && theme.about.banner_img || theme.default_cover_i
 
 <!-- Banner -->
 <div class="banner" style="background-image: url('<%= page.banner_img %>');">
-  <div class="banner-overlay"></div>
   <div class="banner-content">
     <h1 class="banner-title"><%= page.title %></h1>
     <% if (page.subtitle) { %>
@@ -61,15 +60,6 @@ page.banner_img = theme.about && theme.about.banner_img || theme.default_cover_i
   background-size: cover;
   background-position: center;
   margin-bottom: 2rem;
-}
-
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 .banner-content {

@@ -213,6 +213,25 @@
   color: #e0e0e0;
 }
 
+/* 如果有关于页面的banner，也移除遮罩 */
+.about-banner {
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.about-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .about-header {

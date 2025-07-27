@@ -6,7 +6,6 @@ page.banner_img = theme.page404 && theme.page404.banner_img || theme.default_cov
 
 <!-- Banner -->
 <div class="banner" style="background-image: url('<%= page.banner_img %>');">
-  <div class="banner-overlay"></div>
   <div class="banner-content">
     <h1 class="banner-title"><%= page.title %></h1>
     <% if (page.subtitle) { %>
@@ -38,4 +37,5 @@ page.banner_img = theme.page404 && theme.page404.banner_img || theme.default_cov
   <% if (theme.page404 && theme.page404.redirect_delay) { %>
     setTimeout(redirect, <%= parseInt(theme.page404.redirect_delay) %>);
   <% } %>
+</script>
 </script>

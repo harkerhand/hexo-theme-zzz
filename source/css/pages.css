@@ -1,24 +1,17 @@
 /* 页面通用样式 */
 
-/* Banner 样式 */
+/* Banner 样式 - 移除视差效果 */
 .banner {
   position: relative;
   height: 60vh;
   background-size: cover;
   background-position: center;
+  background-attachment: scroll; /* 确保背景不固定 */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
-}
-
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  /* 移除任何transform相关属性 */
 }
 
 .banner-content {
@@ -26,6 +19,7 @@
   z-index: 2;
   text-align: center;
   color: white;
+  /* 确保内容不会有位移 */
 }
 
 .banner-title {
@@ -441,6 +435,15 @@
     margin-bottom: 1.5rem;
   }
   
+  .category-name {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+  }
+  
+  .category-posts {
+    padding: 1rem 1.2rem;
+  }
+
   .category-name {
     padding: 1rem 1.2rem;
     font-size: 1.2rem;

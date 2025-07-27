@@ -9,17 +9,6 @@ Travel.events = {
     var billboard = Travel.utils.getElement('.banner');
     if (!billboard) return;
 
-    // 首屏视差滚动
-    if (CONFIG.banner && CONFIG.banner.parallax) {
-      Travel.utils.listenScroll(Travel.utils.throttle(function() {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        var rate = scrollTop / window.innerHeight;
-        if (rate <= 1) {
-          billboard.style.transform = `translate3d(0, ${scrollTop * 0.5}px, 0)`;
-        }
-      }, 16));
-    }
-
     // 打字机效果
     var subtitle = Travel.utils.getElement('#subtitle');
     if (subtitle && CONFIG.typing && CONFIG.typing.enable) {
@@ -209,6 +198,17 @@ Travel.events = {
    */
   refresh: function() {
     // 刷新插件
+    Travel.plugins.fancyBox();
+    Travel.plugins.imageCaption();
+    Travel.plugins.codeWidget();
+    Travel.plugins.anchorjs();
+    
+    // 重新初始化瀑布流
+    if (window.zzzMasonry) {
+      window.zzzMasonry.relayout();
+    }
+  }
+};
     Travel.plugins.fancyBox();
     Travel.plugins.imageCaption();
     Travel.plugins.codeWidget();

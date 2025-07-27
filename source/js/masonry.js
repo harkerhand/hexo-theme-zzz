@@ -135,7 +135,7 @@ class ZZZMasonry {
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.item-container');
     if (container) {
-        // 等待一小段时间确保CSS加载完成
+        // 等待一小段时间确保CSS加载完成，不影响banner
         setTimeout(() => {
             window.zzzMasonry = new ZZZMasonry(container, {
                 columnWidth: 320,
@@ -143,5 +143,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 fitWidth: true
             });
         }, 100);
+    }
+    
+    // 确保banner不受瀑布流影响
+    const banner = document.querySelector('.banner');
+    if (banner) {
+        banner.style.transform = 'none';
+        banner.style.willChange = 'auto';
     }
 });

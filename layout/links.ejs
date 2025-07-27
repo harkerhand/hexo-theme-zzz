@@ -6,7 +6,6 @@ page.banner_img = theme.links && theme.links.banner_img || theme.default_cover_i
 
 <!-- Banner -->
 <div class="banner" style="background-image: url('<%= page.banner_img %>');">
-  <div class="banner-overlay"></div>
   <div class="banner-content">
     <h1 class="banner-title"><%= page.title %></h1>
     <% if (page.subtitle) { %>
@@ -47,4 +46,5 @@ page.banner_img = theme.links && theme.links.banner_img || theme.default_cover_i
       <%- theme.links.custom.content %>
     </div>
   <% } %>
+</div>
 </div>

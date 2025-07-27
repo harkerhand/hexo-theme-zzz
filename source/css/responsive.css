@@ -38,6 +38,27 @@
 	.hovereffect .overlay-text {
 		font-size: 22px;
 	}
+	
+	/* 移动端banner样式优化 */
+	.banner {
+		height: 40vh;
+		min-height: 300px;
+	}
+	
+	.banner-title {
+		font-size: 2rem;
+		text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+	}
+	
+	.banner-subtitle {
+		font-size: 1.1rem;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+	}
+	
+	/* 确保移动端没有遮罩相关样式 */
+	.banner-overlay {
+		display: none !important;
+	}
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -47,6 +68,11 @@
 	
 	.index-item {
 		width: 300px;
+	}
+	
+	/* 平板端也移除遮罩 */
+	.banner-overlay {
+		display: none !important;
 	}
 }
 

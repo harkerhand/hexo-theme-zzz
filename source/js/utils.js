@@ -46,7 +46,7 @@ Travel.utils = {
   },
 
   /**
-   * 滚动到指定元素
+   * 滚动到指定元素 - 移除视差效果
    */
   scrollToElement: function(target, offset) {
     var element = typeof target === 'string' ? this.getElement(target) : target;
@@ -268,7 +268,7 @@ Travel.utils = {
   },
 
   /**
-   * 节流函数
+   * 节流函数 - 移除视差相关用法
    */
   throttle: function(func, limit) {
     let inThrottle;
