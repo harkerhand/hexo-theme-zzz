@@ -36,7 +36,11 @@
         <div class="card-categories">
           <i class="iconfont icon-folder"></i>
           <% item.categories.forEach(function(cat, index) { %>
-            <a href="<%- url_for('categories/' + cat.name + '/') %>" class="category-tag"><%- cat.name %></a>
+            <% 
+              // 直接删除分类名称中的特殊字符
+              var catSlug = cat.name.replace(/[^\w\s]/g, '').replace(/\s+/g, '-').toLowerCase();
+            %>
+            <a href="<%- url_for('categories/' + catSlug + '/') %>" class="category-tag"><%- cat.name %></a>
           <% }); %>
         </div>
       <% } %>
@@ -45,7 +49,11 @@
         <div class="card-tags">
           <i class="iconfont icon-tag"></i>
           <% item.tags.each(function(tag) { %>
-            <a href="<%- url_for('tags/' + tag.name + '/') %>" class="tag-item"><%- tag.name %></a>
+            <% 
+              // 直接删除标签名称中的特殊字符
+              var tagSlug = tag.name.replace(/[^\w\s]/g, '').replace(/\s+/g, '-').toLowerCase();
+            %>
+            <a href="<%- url_for('tags/' + tagSlug + '/') %>" class="tag-item"><%- tag.name %></a>
           <% }); %>
         </div>
       <% } %>

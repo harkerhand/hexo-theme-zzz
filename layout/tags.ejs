@@ -17,42 +17,47 @@ page.banner_img = theme.tag && theme.tag.banner_img || theme.default_cover_image
 
 <!-- Tags Content -->
 <div class="content-container">
-  <div class="tag-cloud">
-    <% site.tags.each(function(tag) { %>
-      <% if (tag.posts.length > 0) { %>
-        <a href="<%= url_for(tag.path) %>" class="tag-item" 
-           style="font-size: <%= Math.min(24, Math.max(14, 14 + tag.posts.length * 2)) %>px;">
-          <%= tag.name %>
-          <span class="tag-count">(<%= tag.posts.length %>)</span>
-        </a>
-      <% } %>
+  <div class="tag-list">
+    <% 
+    var tagsData = [];
+    site.tags.each(function(tag) {
+      if (tag.posts.length > 0) {
+        tagsData.push({
+          name: tag.name,
+          posts: tag.posts.toArray(),
+          count: tag.posts.length,
+          slug: tag.name.replace(/[^\w\s]/g, '').replace(/\s+/g, '-').toLowerCase()
+        });
+      }
+    });
+    tagsData.sort(function(a, b) { return b.count - a.count; });
+    %>
+    
+    <% tagsData.forEach(function(tag) { %>
+      <div class="tag-item-block">
+        <h2 class="tag-name">
+          <a href="<%= url_for('tags/' + tag.slug + '/') %>">
+            <%= tag.name %>
+            <span class="tag-count">(<%= tag.count %>)</span>
+          </a>
+        </h2>
+        <div class="tag-posts">
+          <% tag.posts.slice(0, 10).forEach(function(post) { %>
+            <div class="tag-post">
+              <a href="<%= url_for(post.path) %>"><%= post.title || '无标题文档' %></a>
+              <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+            </div>
+          <% }); %>
+          <% if (tag.posts.length > 10) { %>
+            <div class="tag-more">
+              <a href="<%= url_for('tags/' + tag.slug + '/') %>">查看更多 (<%= tag.posts.length - 10 %> 篇)</a>
+            </div>
+          <% } %>
+        </div>
+      </div>
     <% }); %>
   </div>
 </div>
-
-<style>
-.banner {
-  position: relative;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 2rem;
-}
-
-.banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.banner-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
   padding: 2rem;
 }
 

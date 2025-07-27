@@ -205,11 +205,11 @@ span {
 }
 
 .card-meta-inline {
-	margin: 10px 0 0 0;
+	margin: 8px 0 0 0;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 4px;
+	gap: 3px;
 	font-size: 0.8rem;
 }
 
@@ -227,7 +227,7 @@ span {
 .card-tags {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 4px;
+	gap: 3px;
 }
 
 .card-categories i,
@@ -242,9 +242,9 @@ span {
 .category-tag {
 	background: rgba(107, 189, 0, 0.15);
 	color: #6bbd00;
-	padding: 1px 6px;
-	border-radius: 10px;
-	font-size: 0.75rem;
+	padding: 1px 5px;
+	border-radius: 8px;
+	font-size: 0.7rem;
 	border: 1px solid rgba(107, 189, 0, 0.3);
 	margin: 0;
 	text-decoration: none;
@@ -255,14 +255,16 @@ span {
 	background: rgba(107, 189, 0, 0.3);
 	color: #F1D801;
 	border-color: rgba(107, 189, 0, 0.5);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 8px rgba(107, 189, 0, 0.3);
 }
 
 .tag-item {
 	background: rgba(241, 216, 1, 0.15);
 	color: #F1D801;
-	padding: 1px 6px;
-	border-radius: 10px;
-	font-size: 0.75rem;
+	padding: 1px 5px;
+	border-radius: 8px;
+	font-size: 0.7rem;
 	border: 1px solid rgba(241, 216, 1, 0.3);
 	margin: 0;
 	text-decoration: none;
@@ -273,14 +275,16 @@ span {
 	background: rgba(241, 216, 1, 0.3);
 	color: #6bbd00;
 	border-color: rgba(241, 216, 1, 0.5);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 8px rgba(241, 216, 1, 0.3);
 }
 
 .card-date {
 	background: rgba(128, 128, 128, 0.15);
 	color: #ccc;
-	padding: 1px 6px;
-	border-radius: 10px;
-	font-size: 0.75rem;
+	padding: 1px 5px;
+	border-radius: 8px;
+	font-size: 0.7rem;
 	border: 1px solid rgba(128, 128, 128, 0.3);
 	margin: 0;
 }
