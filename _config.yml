@@ -79,7 +79,7 @@ index:
   # 文章摘要长度
   excerpt_length: 200
   # 首页Banner图
-  banner_img: /img/default.png
+  banner_img: /img/background.jpg
   banner_img_height: 100
 
 # 横幅配置 - 移除视差效果
@@ -114,7 +114,7 @@ fun_features:
 
 # 文章配置
 post:
-  banner_img: /img/background.png
+  banner_img: /img/background.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
   
@@ -156,7 +156,7 @@ about:
   enable: true
   title: "关于"
   subtitle: "关于我"
-  banner_img: /img/background.png
+  banner_img: /img/background.jpg
   banner_img_height: 60
   name: "ZZZ Blog"
   intro: "一个绝区零风格的博客主题"
@@ -170,11 +170,11 @@ links:
   enable: true
   title: "友链"
   subtitle: "朋友们"
-  banner_img: /img/default.png
+  banner_img: /img/background.jpg
   banner_img_height: 60
   items:
     - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/images/hexo.png" }
-  onerror_avatar: /img/avatar.png
+  onerror_avatar: /img/logo_circle.png
   custom:
     enable: false
     content: ''
@@ -184,7 +184,7 @@ category:
   enable: true
   title: "分类"
   subtitle: "文章分类"
-  banner_img: /img/default.png
+  banner_img: /img/background.jpg
   banner_img_height: 60
   order_by: "-length"
   collapse_depth: 0
@@ -196,7 +196,7 @@ tag:
   enable: true
   title: "标签"
   subtitle: "标签云"
-  banner_img: /img/default.png
+  banner_img: /img/background.jpg
   banner_img_height: 80
   tagcloud:
     min_font: 15
@@ -210,7 +210,7 @@ page404:
   enable: true
   title: "页面未找到"
   subtitle: "抱歉，您访问的页面不存在"
-  banner_img: /img/default.png
+  banner_img: /img/background.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   redirect_delay: 5000
@@ -221,13 +221,9 @@ footer:
   copyright: "© 2024 Travel Theme"
   powered_by: true
   theme_info: true
-  content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
-  '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
-  '
-  '
+  content: "<a href=\"https://hexo.io\" target=\"_blank\" rel=\"nofollow noopener\"><span>Hexo</span></a><i class=\"iconfont icon-love\"></i>
+    <a href=\"https://github.com/harkerhand/hexo-theme-travel\" target=\"_blank\" rel=\"nofollow noopener\"><span>Travel</span></a>
+    <a href=\"https://hexo.io\" target=\"_blank\" rel=\"nofollow noopener\"><span>Hexo</span></a>
+    <i class=\"iconfont icon-love\"></i>
+    <a href=\"https://github.com/harkerhand/hexo-theme-travel\" target=\"_blank\" rel=\"nofollow noopener\"><span>Travel</span></a>
+  "
