@@ -45,7 +45,29 @@ page.banner_img = theme.about && theme.about.banner_img || theme.default_cover_i
   
   <div class="about-content">
     <div class="inner-content">
-      <%- page.content %>
+      <%
+        // Find the about page content
+        // In Hexo, when using custom layouts, the page content might not be directly available
+        // So we need to find it from the site.pages collection
+        var aboutPage = null;
+        if (page.content) {
+          // If page.content is available, use it directly
+          aboutPage = page;
+        } else {
+          // Otherwise, find the page in site.pages
+          site.pages.each(function(p) {
+            if (p.path === 'about/index.html' || p.source.includes('about/index.md')) {
+              aboutPage = p;
+            }
+          });
+        }
+      %>
+      
+      <% if (aboutPage && aboutPage.content) { %>
+        <%- aboutPage.content %>
+      <% } else { %>
+        <p>暂无内容</p>
+      <% } %>
     </div>
   </div>
 </div>
