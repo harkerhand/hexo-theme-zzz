@@ -1,21 +1,27 @@
+# Travel Theme Configuration - 绝区零风格
 
+# 基本设置
 default_cover_image: img/background.jpg
 default_post_title: '无标题文档'
 url_root: '/'
+favicon: /favicon.ico
+logo: /images/logo.png
 
-
-# Header
+# 导航菜单
 menu:
-  '归档': /archives
-  '分类': /categories
-  '标签': /tags
+  '首页': /
+  '归档': /archives/
+  '分类': /categories/
+  '标签': /tags/
+  '关于': /about/
   '空洞调查协会': https://zenless.hoyoverse.com/
-  '关于': /about
 
+# 页脚设置
 foot_about:
   phone: '空洞调查协会热线'
   address: '新艾利都市'
 
+# 社交媒体
 media:
   - icon: iconfont icon-github
     link: 'https://github.com/harkerhand'
@@ -27,9 +33,246 @@ media:
     link: 'https://zenless.hoyoverse.com/'
     tip: '绝区零官网'
 
-
-    
+# 图标字体
 iconfont:
-- //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
-- //at.alicdn.com/t/c/font_4823232_6grnmuy6d4c.css
-- //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css
+  - //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
+  - //at.alicdn.com/t/c/font_4823232_6grnmuy6d4c.css
+  - //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css
+
+# 自定义CSS和JS
+custom_css:
+custom_js:
+
+# 代码块配置
+code:
+  copy_btn: true
+  language:
+    enable: true
+    default: "TEXT"
+  highlight:
+    enable: true
+    line_number: true
+
+# 图片功能
+image_zoom:
+  enable: true
+  img_url_replace: ['', '']
+
+image_caption:
+  enable: true
+
+# 懒加载
+lazyload:
+  enable: true
+  loading_img: /images/loading.gif
+  onlypost: false
+  offset_factor: 2
+
+# 搜索功能
+search:
+  enable: true
+  path: /local-search.xml
+  field: post
+  content: true
+
+# 首页配置
+index:
+  # 瀑布流布局
+  waterfall: true
+  # 每页文章数
+  per_page: 10
+  # 文章摘要长度
+  excerpt_length: 200
+  # 首页Banner图
+  banner_img: /img/default.png
+  banner_img_height: 100
+  banner_mask_alpha: 0.3
+
+# 横幅配置
+banner:
+  parallax: true
+  width_height_ratio: 1.0
+
+# 一些好玩的功能
+fun_features:
+  # 打字机效果
+  typing:
+    enable: true
+    typeSpeed: 70
+    cursorChar: "_"
+    loop: false
+    scope: []
+  
+  # 锚点增强
+  anchorjs:
+    enable: true
+    element: h1,h2,h3,h4,h5,h6
+    placement: left
+    visible: hover
+    icon: "#"
+  
+  # 进度条
+  progressbar:
+    enable: true
+    height_px: 3
+    color: "#29d"
+    options: { showSpinner: false, trickleSpeed: 100 }
+
+# 文章配置
+post:
+  banner_img: /img/default.png
+  banner_img_height: 70
+  banner_mask_alpha: 0.3
+  
+  # 相关文章
+  related_posts:
+    enable: true
+    limit: 5
+  
+  # 上下文章导航
+  prev_next: true
+  
+  # 文章目录
+  toc:
+    enable: true
+    placement: right
+    auto_open: true
+    headingSelector: "h1,h2,h3,h4,h5,h6"
+    collapseDepth: 0
+  
+  # 文章元信息
+  meta:
+    author:
+      enable: true
+    date:
+      enable: true
+      format: "LL a"
+    wordcount:
+      enable: true
+    min2read:
+      enable: true
+      awl: 2
+      wpm: 60
+    views:
+      enable: false
+      source: "busuanzi"
+
+# 标签页
+tag:
+  enable: true
+  title: "标签"
+  subtitle: "标签云"
+  banner_img: /img/default.png
+  banner_img_height: 80
+  banner_mask_alpha: 0.3
+  tagcloud:
+    min_font: 15
+    max_font: 30
+    unit: px
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"
+
+# 分类页
+category:
+  enable: true
+  title: "分类"
+  subtitle: "文章分类"
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  order_by: "-length"
+  collapse_depth: 0
+  post_order_by: "-date"
+  post_limit: 10
+
+# 关于页
+about:
+  enable: true
+  title: "关于"
+  subtitle: "关于我"
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  name: "Travel Blog"
+  intro: "一个优雅的旅行博客主题"
+  avatar: /images/avatar.png
+  icons:
+    - { class: "iconfont icon-github", link: "https://github.com", tip: "GitHub" }
+    - { class: "iconfont icon-email", link: "mailto:example@email.com", tip: "邮箱" }
+    - { class: "iconfont icon-wechat", qrcode: "/images/wechat-qr.png" }
+
+# 友链页
+links:
+  enable: true
+  title: "友链"
+  subtitle: "朋友们"
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  items:
+    - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/images/hexo.png" }
+  onerror_avatar: /img/avatar.png
+  custom:
+    enable: false
+    content: ''
+
+# 404页面
+page404:
+  enable: true
+  title: "页面未找到"
+  subtitle: "抱歉，您访问的页面不存在"
+  banner_img: /img/default.png
+  banner_img_height: 85
+  banner_mask_alpha: 0.3
+  redirect_delay: 5000
+
+# 归档页面
+archive:
+  title: "归档"
+  subtitle: "时间轴"
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+# 页脚
+footer:
+  copyright: "© 2024 Travel Theme"
+  powered_by: true
+  theme_info: true
+  content: '
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/harkerhand/hexo-theme-travel" target="_blank" rel="nofollow noopener"><span>Travel</span></a>
+  '
+
+# 第三方服务
+# 评论系统
+comments:
+  enable: false
+  type: # valine | disqus | gitalk 等
+
+# 统计
+web_analytics:
+  enable: false
+  follow_dnt: true
+  google:
+    measurement_id:
+  baidu:
+  leancloud:
+    app_id:
+    app_key:
+    server_url:
+
+# 滚动箭头
+scroll_down_arrow:
+  enable: true
+  banner_height_limit: 80
+  scroll_after_turning_page: true
+
+scroll_top_arrow:
+  enable: true
+
+# 其他设置
+# 开发模式
+development:
+  enable: false

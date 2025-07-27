@@ -1,47 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Title -->
-  <%
-      var title = [];
-      if (page.current > 1) title.push(__('page', page.current));
-      if (page.title) title.push(page.title);
-      title.push(config.title || '绝区零博客');
-  %>
-  <title><%= title.join(' - ') %></title>
-
-  <!--Favicon-->
-  <link rel="icon" href="<%- theme.url_root %>favicon.ico">
-
-  <!--Description-->
-  <% if (page.description){ %>
-      <meta name="description" content="<%= page.description %>">
-  <% } else if (config.description){ %>
-      <meta name="description" content="<%= config.description %>">
-  <% } else if (page.excerpt){ %>
-      <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
-  <% } else if (page.content){ %>
-      <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
-  <% } else { %>
-      <meta name="description" content="欢迎来到绝区零世界，探索空洞的秘密">
-  <% } %>
-
-  <!--Author-->
-  <% if (config.author){ %>
-      <meta name="author" content="<%= config.author %>">
-  <% } %>
-
-  <!-- 绝区零主题关键词 -->
-  <meta name="keywords" content="绝区零,ZZZ,Zenless Zone Zero,博客,游戏,二次元">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-  <!-- Google Fonts for better typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Iconfont -->
+  <% 
+  var title = page.title ? [page.title, config.title].join(' - ') : config.title;
+  var description = page.description || page.excerpt || config.description;
+  var keywords = page.keywords || page.tags && page.tags.map(tag => tag.name).join(',') || config.keywords;
+  %>
+  
+  <title><%= title %></title>
+  <meta name="description" content="<%= strip_html(description).substring(0, 200) %>">
+  <meta name="keywords" content="<%= keywords %>">
+  <meta name="author" content="<%= config.author %>">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="<%= theme.favicon || '/favicon.ico' %>">
+  
+  <!-- Icon Font -->
   <% if (theme.iconfont) { %>
     <% theme.iconfont.forEach(function(font) { %>
       <link rel="stylesheet" href="<%- font %>">
@@ -56,7 +34,27 @@
   <%- css('css/animations.css') %>
   <%- css('css/responsive.css') %>
   <%- css('css/footer.css') %>
-
+  
+  <% if (theme.custom_css) { %>
+    <%- css(theme.custom_css) %>
+  <% } %>
+  
+  <!-- Export Config -->
+  <%- export_config() %>
+  
+  <!-- Core JS -->
+  <script>
+    var Travel = window.Travel || {};
+    Travel.utils = {};
+    Travel.plugins = {};
+    Travel.events = {};
+    Travel.boot = {};
+  </script>
+  <%- js('js/utils.js') %>
+  <%- js('js/plugins.js') %>
+  <%- js('js/events.js') %>
+  <%- js('js/boot.js') %>
+  
   <!-- 瀑布流布局脚本预加载 -->
   <link rel="preload" href="<%- url_for('js/masonry.js') %>" as="script">
 

@@ -1,0 +1,160 @@
+<%
+page.title = theme.about && theme.about.title || '关于'
+page.subtitle = theme.about && theme.about.subtitle || '关于我'
+%>
+
+<div class="about-page">
+  <div class="about-header">
+    <% if (theme.about && theme.about.avatar) { %>
+      <div class="about-avatar">
+        <img src="<%= theme.about.avatar %>" alt="Avatar">
+      </div>
+    <% } %>
+    <h1 class="about-name"><%= theme.about && theme.about.name || config.author %></h1>
+    <% if (theme.about && theme.about.intro) { %>
+      <p class="about-intro"><%= theme.about.intro %></p>
+    <% } %>
+    
+    <% if (theme.about && theme.about.icons) { %>
+      <div class="about-icons">
+        <% theme.about.icons.forEach(function(icon) { %>
+          <% if (icon.qrcode) { %>
+            <span class="about-icon qr-trigger">
+              <i class="<%= icon.class %>"></i>
+              <img class="qr-img" src="<%= icon.qrcode %>" alt="QR Code">
+            </span>
+          <% } else { %>
+            <a href="<%= icon.link %>" target="_blank" class="about-icon" 
+               <% if (icon.tip) { %>title="<%= icon.tip %>"<% } %>>
+              <i class="<%= icon.class %>"></i>
+            </a>
+          <% } %>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+  
+  <div class="about-content">
+    <%- page.content %>
+  </div>
+</div>
+
+<style>
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.about-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.about-avatar {
+  margin-bottom: 1.5rem;
+}
+
+.about-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.about-name {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.about-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.about-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.about-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.qr-trigger {
+  cursor: pointer;
+}
+
+.qr-img {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.qr-trigger:hover .qr-img {
+  opacity: 1;
+  visibility: visible;
+}
+
+.about-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  line-height: 1.8;
+}
+
+.about-content h1,
+.about-content h2,
+.about-content h3 {
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.about-content a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.about-content a:hover {
+  text-decoration: underline;
+}
+</style>
