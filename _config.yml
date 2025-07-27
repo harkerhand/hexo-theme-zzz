@@ -79,42 +79,13 @@ index:
   # 文章摘要长度
   excerpt_length: 200
   # 首页Banner图
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 100
 
-# 横幅配置 - 移除视差效果
-banner:
-  parallax: false  # 关闭视差滚动
-  width_height_ratio: 1.0
-
-# 一些好玩的功能
-fun_features:
-  # 打字机效果
-  typing:
-    enable: true
-    typeSpeed: 70
-    cursorChar: "_"
-    loop: false
-    scope: []
-  
-  # 锚点增强
-  anchorjs:
-    enable: true
-    element: h1,h2,h3,h4,h5,h6
-    placement: left
-    visible: hover
-    icon: "#"
-  
-  # 进度条
-  progressbar:
-    enable: true
-    height_px: 3
-    color: "#29d"
-    options: { showSpinner: false, trickleSpeed: 100 }
 
 # 文章配置
 post:
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
   
@@ -156,11 +127,11 @@ about:
   enable: true
   title: "关于"
   subtitle: "关于我"
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 60
   name: "ZZZ Blog"
   intro: "一个绝区零风格的博客主题"
-  avatar: /img/logo_circle.png
+  avatar: img/logo_circle.png
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
     - { class: "iconfont icon-mail", link: "mailto:harkerhand@outlook.com", tip: "邮箱" }
@@ -170,11 +141,11 @@ links:
   enable: true
   title: "友链"
   subtitle: "朋友们"
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 60
   items:
     - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/images/hexo.png" }
-  onerror_avatar: /img/logo_circle.png
+  onerror_avatar: img/logo_circle.png
   custom:
     enable: false
     content: ''
@@ -184,7 +155,7 @@ category:
   enable: true
   title: "分类"
   subtitle: "文章分类"
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 60
   order_by: "-length"
   collapse_depth: 0
@@ -196,7 +167,7 @@ tag:
   enable: true
   title: "标签"
   subtitle: "标签云"
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 80
   tagcloud:
     min_font: 15
@@ -210,7 +181,7 @@ page404:
   enable: true
   title: "页面未找到"
   subtitle: "抱歉，您访问的页面不存在"
-  banner_img: /img/background.jpg
+  banner_img: img/background.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   redirect_delay: 5000
