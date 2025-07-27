@@ -20,7 +20,19 @@
   <ul class="navbar-menu">
     <% for (var i in theme.menu){ %>
       <li class="nav-item">
-        <a class="nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+        <% 
+          var isActive = false;
+          var menuUrl = theme.menu[i];
+          var currentPath = page.path || '';
+          
+          // 判断当前页面是否匹配菜单项
+          if (menuUrl === '/' && (page.layout === 'index' || currentPath === '' || currentPath === 'index.html')) {
+            isActive = true;
+          } else if (menuUrl !== '/' && currentPath.indexOf(menuUrl.replace('/', '')) === 0) {
+            isActive = true;
+          }
+        %>
+        <a class="nav-link <%= isActive ? 'active' : '' %>" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
       </li>
     <% } %>
   </ul>
