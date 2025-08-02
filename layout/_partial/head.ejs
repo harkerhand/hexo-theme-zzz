@@ -46,14 +46,9 @@
   <%- export_config() %>
   
   <!-- Core JS -->
-  <script>
-    var Travel = window.Travel || {};
-    Travel.utils = {};
-    Travel.plugins = {};
-    Travel.events = {};
-    Travel.boot = {};
-  </script>
+  <%- js('js/zzz.js') %>
   <%- js('js/utils.js') %>
+  <%- js('js/plugins.js') %>
   <%- js('js/events.js') %>
   <%- js('js/boot.js') %>
   

@@ -1,8 +1,8 @@
-/* global Travel, CONFIG */
+/* global ZZZ, CONFIG */
 
 window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
 
-Travel.utils = {
+ZZZ.utils = {
   
   /**
    * 获取元素
@@ -89,8 +89,8 @@ Travel.utils = {
     offsetFactor = offsetFactor && offsetFactor >= 0 ? offsetFactor : 0;
 
     function waitInViewport(element) {
-      Travel.utils.listenDOMLoaded(function() {
-        if (Travel.utils.elementVisible(element, offsetFactor)) {
+      ZZZ.utils.listenDOMLoaded(function() {
+        if (ZZZ.utils.elementVisible(element, offsetFactor)) {
           callback();
           return;
         }
@@ -106,9 +106,9 @@ Travel.utils = {
           });
           io.observe(element);
         } else {
-          var wrapper = Travel.utils.listenScroll(function() {
-            if (Travel.utils.elementVisible(element, offsetFactor)) {
-              Travel.utils.unlistenScroll(wrapper);
+          var wrapper = ZZZ.utils.listenScroll(function() {
+            if (ZZZ.utils.elementVisible(element, offsetFactor)) {
+              ZZZ.utils.unlistenScroll(wrapper);
               callback();
             }
           });
@@ -146,7 +146,7 @@ Travel.utils = {
       });
       mo.observe(document, { childList: true, subtree: true });
     } else {
-      Travel.utils.listenDOMLoaded(function() {
+      ZZZ.utils.listenDOMLoaded(function() {
         var waitLoop = function() {
           var ele = document.querySelector(selector);
           if (ele) {
@@ -211,7 +211,7 @@ Travel.utils = {
         loadFunc();
         ele.removeAttribute('lazyload');
       };
-      Travel.utils.waitElementVisible(selector, callback, CONFIG.lazyload && CONFIG.lazyload.offset_factor || 2);
+      ZZZ.utils.waitElementVisible(selector, callback, CONFIG.lazyload && CONFIG.lazyload.offset_factor || 2);
     } else {
       loadFunc();
     }

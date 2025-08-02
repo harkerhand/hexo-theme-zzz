@@ -162,7 +162,7 @@ GPL-V3
 ## 更新日志
 
 ### v1.0.0
-- 基于 hexo-theme-travel 改造
+- 基于绝区零游戏风格设计
 - 完全重新设计为绝区零风格
 - 新增视频背景支持
 - 优化移动端体验
@@ -170,9 +170,9 @@ GPL-V3
 
 ## 主题作者
 
-此主题由 [何山](http://www.harkerhand.online/) 设计并创建。
+此主题由 [何山](http://www.harkerhand.cn/) 设计并创建。
 
 ## 反馈与问题
 
-如果你有任何问题、功能请求或需要修复的 Bug，请[点击这里](https://github.com/harkerhand/hexo-theme-travel/issues/new)提交问题。
+如果你有任何问题、功能请求或需要修复的 Bug，请[点击这里](https://github.com/harkerhand/hexo-theme-zzz/issues/new)提交问题。
 

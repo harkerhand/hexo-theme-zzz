@@ -13,44 +13,48 @@ page.banner_img = theme.tag && theme.tag.banner_img || theme.default_cover_image
 
 <!-- Tags Content -->
 <div class="content-container">
-  <div class="tag-list">
+  <div class="tag-cloud">
     <% 
     var tagsData = [];
     site.tags.each(function(tag) {
       if (tag.posts.length > 0) {
         tagsData.push({
           name: tag.name,
-          posts: tag.posts.toArray(),
           count: tag.posts.length,
-          slug: tag.name.replace(/[^\w\s]/g, '').replace(/\s+/g, '-').toLowerCase()
+          slug: tag.name.replace(/[^\u4e00-\u9fa5\w\s]/g, '').replace(/\s+/g, '-').toLowerCase()
         });
       }
     });
-    tagsData.sort(function(a, b) { return b.count - a.count; });
+    
+    // 计算标签云字体大小
+    var maxCount = Math.max.apply(Math, tagsData.map(function(tag) { return tag.count; }));
+    var minCount = Math.min.apply(Math, tagsData.map(function(tag) { return tag.count; }));
+    var minFont = theme.tag.tagcloud.min_font || 15;
+    var maxFont = theme.tag.tagcloud.max_font || 30;
+    var unit = theme.tag.tagcloud.unit || 'px';
+    
+    // 预定义颜色数组
+    var colors = ['#BBBBEE', '#9999DD', '#7777CC', '#5555BB', '#337ab7', '#225599', '#114488'];
     %>
     
     <% tagsData.forEach(function(tag) { %>
-      <div class="tag-item-block">
-        <h2 class="tag-name">
-          <a href="<%= url_for('tags/' + tag.slug + '/') %>">
-            <%= tag.name %>
-            <span class="tag-count">(<%= tag.count %>)</span>
-          </a>
-        </h2>
-        <div class="tag-posts">
-          <% tag.posts.slice(0, 10).forEach(function(post) { %>
-            <div class="tag-post">
-              <a href="<%= url_for(post.path) %>"><%= post.title || '无标题文档' %></a>
-              <span class="post-date"><%= date(post.date, 'YYYY-MM-DD') %></span>
-            </div>
-          <% }); %>
-          <% if (tag.posts.length > 10) { %>
-            <div class="tag-more">
-              <a href="<%= url_for('tags/' + tag.slug + '/') %>">查看更多 (<%= tag.posts.length - 10 %> 篇)</a>
-            </div>
-          <% } %>
-        </div>
-      </div>
+      <% 
+      // 计算字体大小
+      var fontSize = minFont;
+      if (maxCount > minCount) {
+        fontSize = minFont + (maxFont - minFont) * (tag.count - minCount) / (maxCount - minCount);
+      }
+      
+      // 根据文章数量选择颜色
+      var colorIndex = Math.min(Math.floor((tag.count - minCount) / Math.max(1, (maxCount - minCount)) * colors.length), colors.length - 1);
+      var color = colors[colorIndex];
+      %>
+      <a href="<%= url_for('tags/' + tag.slug + '/') %>" 
+         class="tag-cloud-item" 
+         style="font-size: <%= Math.round(fontSize) %><%= unit %>; color: <%= color %>;"
+         title="<%= tag.name %> (<%= tag.count %> 篇文章)">
+        <%= tag.name %>
+      </a>
     <% }); %>
   </div>
 </div>

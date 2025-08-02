@@ -51,9 +51,6 @@ class ZZZMasonry {
     
     layout() {
         this.items.forEach((item, index) => {
-            // 添加淡入动画
-            item.style.animationDelay = (0.1 * index) + 's';
-            item.classList.add('fade-in');
             
             const shortestColumn = this.getShortestColumn();
             const x = shortestColumn * (this.options.columnWidth + this.options.gutter);

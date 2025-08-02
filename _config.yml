@@ -1,4 +1,4 @@
-# Travel Theme Configuration - 绝区零风格
+# ZZZ Theme Configuration - 绝区零风格主题配置
 
 # 基本设置
 default_cover_image: img/background.jpg
@@ -36,15 +36,9 @@ author_info:
   exp_total: 9999999
   exp_percentage: 11.45
 
-# 图标字体
+# 图标字体 - 根据实际使用情况保留必要的字体
 iconfont:
   - //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
-  - //at.alicdn.com/t/c/font_4823232_6grnmuy6d4c.css
-  - //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css
-
-# 自定义CSS和JS
-custom_css:
-custom_js:
 
 # 代码块配置
 code:
@@ -59,15 +53,13 @@ code:
 # 图片功能
 image_zoom:
   enable: true
-  img_url_replace: ['', '']
-
+  
 image_caption:
   enable: true
 
 # 懒加载
 lazyload:
   enable: true
-  loading_img: /images/loading.gif
   onlypost: false
   offset_factor: 2
 
@@ -99,7 +91,7 @@ post:
   
   # 相关文章
   related_posts:
-    enable: true
+    enable: false
     limit: 5
   
   # 上下文章导航
@@ -121,14 +113,11 @@ post:
       enable: true
       format: "LL a"
     wordcount:
-      enable: true
+      enable: false
     min2read:
-      enable: true
-      awl: 2
-      wpm: 60
+      enable: false
     views:
       enable: false
-      source: "busuanzi"
 
 # 关于页
 about:

@@ -1,20 +1,20 @@
-/* global Travel, CONFIG */
+/* global ZZZ, CONFIG */
 
-Travel.events = {
+ZZZ.events = {
 
   /**
    * 首屏加载事件
    */
   billboard: function() {
-    var billboard = Travel.utils.getElement('.banner');
+    var billboard = ZZZ.utils.getElement('.banner');
     if (!billboard) return;
 
     // 打字机效果
-    var subtitle = Travel.utils.getElement('#subtitle');
+    var subtitle = ZZZ.utils.getElement('#subtitle');
     if (subtitle && CONFIG.typing && CONFIG.typing.enable) {
       var text = subtitle.getAttribute('data-typed-text') || subtitle.textContent;
       if (text) {
-        Travel.plugins.typing(text);
+        ZZZ.plugins.typing(text);
       }
     }
   },
@@ -23,11 +23,11 @@ Travel.events = {
    * 导航栏事件
    */
   registerNavbarEvent: function() {
-    var navbar = Travel.utils.getElement('.navbar');
+    var navbar = ZZZ.utils.getElement('.navbar');
     if (!navbar) return;
 
     // 导航栏滚动透明度变化
-    Travel.utils.listenScroll(Travel.utils.throttle(function() {
+    ZZZ.utils.listenScroll(ZZZ.utils.throttle(function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > 0) {
         navbar.classList.add('navbar-scrolled');
@@ -37,8 +37,8 @@ Travel.events = {
     }, 16));
 
     // 移动端菜单切换
-    var navbarToggler = Travel.utils.getElement('.navbar-toggler');
-    var navbarMenu = Travel.utils.getElement('.navbar-menu');
+    var navbarToggler = ZZZ.utils.getElement('.navbar-toggler');
+    var navbarMenu = ZZZ.utils.getElement('.navbar-menu');
     if (navbarToggler && navbarMenu) {
       navbarToggler.addEventListener('click', function() {
         navbarMenu.classList.toggle('show');
@@ -46,7 +46,7 @@ Travel.events = {
       });
 
       // 点击菜单项关闭菜单
-      var menuItems = Travel.utils.getElements('.navbar-menu a');
+      var menuItems = ZZZ.utils.getElements('.navbar-menu a');
       menuItems.forEach(function(item) {
         item.addEventListener('click', function() {
           navbarMenu.classList.remove('show');
@@ -60,20 +60,20 @@ Travel.events = {
    * 滚动箭头事件
    */
   registerScrollDownArrowEvent: function() {
-    var scrollDownArrow = Travel.utils.getElement('.scroll-down-arrow');
+    var scrollDownArrow = ZZZ.utils.getElement('.scroll-down-arrow');
     if (!scrollDownArrow) return;
 
     // 点击滚动到下一屏
     scrollDownArrow.addEventListener('click', function(e) {
       e.preventDefault();
-      var banner = Travel.utils.getElement('.banner');
+      var banner = ZZZ.utils.getElement('.banner');
       if (banner) {
-        Travel.utils.scrollToElement(banner.nextElementSibling, -80);
+        ZZZ.utils.scrollToElement(banner.nextElementSibling, -80);
       }
     });
 
     // 滚动时隐藏箭头
-    Travel.utils.listenScroll(Travel.utils.throttle(function() {
+    ZZZ.utils.listenScroll(ZZZ.utils.throttle(function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > window.innerHeight * 0.8) {
         scrollDownArrow.style.opacity = '0';
@@ -87,7 +87,7 @@ Travel.events = {
    * 回到顶部事件
    */
   registerScrollTopArrowEvent: function() {
-    var scrollTopArrow = Travel.utils.getElement('.scroll-top-arrow');
+    var scrollTopArrow = ZZZ.utils.getElement('.scroll-top-arrow');
     if (!scrollTopArrow) return;
 
     // 点击回到顶部
@@ -100,7 +100,7 @@ Travel.events = {
     });
 
     // 滚动显示/隐藏
-    Travel.utils.listenScroll(Travel.utils.throttle(function() {
+    ZZZ.utils.listenScroll(ZZZ.utils.throttle(function() {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > window.innerHeight) {
         scrollTopArrow.style.display = 'block';
@@ -122,7 +122,7 @@ Travel.events = {
   registerImageLoadedEvent: function() {
     if (!CONFIG.lazyload || !CONFIG.lazyload.enable) return;
 
-    var images = Travel.utils.getElements('img[data-src]');
+    var images = ZZZ.utils.getElements('img[data-src]');
     
     if ('IntersectionObserver' in window) {
       var imageObserver = new IntersectionObserver(function(entries, observer) {
@@ -156,10 +156,10 @@ Travel.events = {
    * 搜索事件
    */
   registerSearchEvent: function() {
-    var searchToggle = Travel.utils.getElement('.search-toggle');
-    var searchOverlay = Travel.utils.getElement('.search-overlay');
-    var searchClose = Travel.utils.getElement('.search-close');
-    var searchInput = Travel.utils.getElement('#search-input');
+    var searchToggle = ZZZ.utils.getElement('.search-toggle');
+    var searchOverlay = ZZZ.utils.getElement('.search-overlay');
+    var searchClose = ZZZ.utils.getElement('.search-close');
+    var searchInput = ZZZ.utils.getElement('#search-input');
 
     if (searchToggle && searchOverlay) {
       searchToggle.addEventListener('click', function(e) {
@@ -198,21 +198,10 @@ Travel.events = {
    */
   refresh: function() {
     // 刷新插件
-    Travel.plugins.fancyBox();
-    Travel.plugins.imageCaption();
-    Travel.plugins.codeWidget();
-    Travel.plugins.anchorjs();
-    
-    // 重新初始化瀑布流
-    if (window.zzzMasonry) {
-      window.zzzMasonry.relayout();
-    }
-  }
-};
-    Travel.plugins.fancyBox();
-    Travel.plugins.imageCaption();
-    Travel.plugins.codeWidget();
-    Travel.plugins.anchorjs();
+    ZZZ.plugins.fancyBox();
+    ZZZ.plugins.imageCaption();
+    ZZZ.plugins.codeWidget();
+    ZZZ.plugins.anchorjs();
     
     // 重新初始化瀑布流
     if (window.zzzMasonry) {

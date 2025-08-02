@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Hexo Generate and Serve",
+			"type": "shell",
+			"command": "cd ..\\..\\..\\ && hexo clean && hexo generate && hexo server",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
