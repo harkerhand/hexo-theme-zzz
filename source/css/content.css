@@ -100,3 +100,44 @@
 	text-shadow: -1.3px -1.3px 0 #414141, -1.3px 1.3px 0 #414141, 1.3px 1.3px 0 #414141;
 	font-style: italic;
 }
+
+/* 代码块样式 - 简洁风格 */
+.inner-content pre {
+	position: relative;
+	background: #1a1a1a;
+	border: 1px solid #333;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+	overflow-x: auto;
+	font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+	line-height: 1.6;
+}
+
+.inner-content code {
+	background: transparent;
+	color: #e0e0e0;
+	font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+	font-size: 14px;
+}
+
+.inner-content pre code {
+	background: transparent;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+}
+
+.inner-content p code {
+	background: #2a2a2a;
+	color: #4ecdc4;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 0.9em;
+	border: 1px solid #555;
+}
+
+/* 移除代码语言标识 */
+.inner-content pre:before {
+	display: none;
+}

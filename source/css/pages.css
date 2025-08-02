@@ -129,107 +129,6 @@
   color: #F1D801 !important;
 }
 
-/* Categories 页面样式 */
-.category-list {
-  max-width: 900px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding: 0 1rem;
-}
-
-.category-item {
-  margin-bottom: 2rem;
-  background: #1e1e1e;
-  border-radius: 15px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  border: 4px solid #383838;
-  transition: all 0.3s ease;
-}
-
-.category-item:hover {
-  border-color: #6bbd00;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(107, 189, 0, 0.2);
-}
-
-.category-name {
-  background: linear-gradient(135deg, #6bbd00 0%, #F1D801 100%);
-  color: #000;
-  margin: 0;
-  padding: 1.2rem 1.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.category-name a {
-  color: #000;
-  text-decoration: none;
-}
-
-.category-count {
-  font-size: 0.9em;
-  opacity: 0.8;
-  margin-left: 0.3rem;
-}
-
-.category-posts {
-  padding: 1.2rem 1.5rem;
-}
-
-.category-post {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #383838;
-  transition: all 0.3s ease;
-}
-
-.category-post:last-child {
-  border-bottom: none;
-}
-
-.category-post:hover {
-  background: rgba(107, 189, 0, 0.1);
-  padding-left: 0.8rem;
-  border-radius: 8px;
-}
-
-.category-post a {
-  color: #e0e0e0;
-  text-decoration: none;
-  flex: 1;
-  transition: color 0.3s ease;
-}
-
-.category-post a:hover {
-  color: #6bbd00;
-}
-
-.post-date {
-  color: #888;
-  font-size: 0.9rem;
-  font-family: monospace;
-}
-
-.category-more {
-  text-align: center;
-  margin-top: 1.2rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid #383838;
-}
-
-.category-more a {
-  color: #F1D801;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.category-more a:hover {
-  color: #6bbd00;
-}
 
 /* 分类云样式 */
 .category-cloud {
@@ -336,6 +235,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
 }
 
 .link-card:hover {
@@ -420,11 +320,6 @@
     align-items: center;
   }
   
-  .category-item,
-  .link-card {
-    margin: 1rem;
-  }
-  
   .links-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -477,17 +372,5 @@
     padding: 0.3rem 0.6rem;
     font-size: 0.9rem !important;
   }
-  
-  .category-item {
-    margin-bottom: 1.5rem;
-  }
-  
-  .category-name {
-    padding: 1rem 1.2rem;
-    font-size: 1.2rem;
-  }
-  
-  .category-posts {
-    padding: 1rem 1.2rem;
-  }
+
 }

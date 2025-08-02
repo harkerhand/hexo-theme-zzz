@@ -1,0 +1,183 @@
+/* 代码高亮主题 - 简洁ZZZ风格 */
+
+/* 基础代码样式 */
+.inner-content pre {
+  background: #1a1a1a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+.inner-content code {
+  color: #e0e0e0 !important;
+}
+
+/* 高亮颜色 - 清晰配色方案 */
+.highlight .comment,
+.highlight .quote {
+  color: #7c7c7c;
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.highlight .number,
+.highlight .string,
+.highlight .meta .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp {
+  color: #4ecdc4;
+}
+
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #45b7d1;
+  font-weight: 600;
+}
+
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .title,
+.highlight .type {
+  color: #f7dc6f;
+}
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link {
+  color: #bb8fce;
+}
+
+.highlight .built_in,
+.highlight .deletion {
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.highlight .formula {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+  color: #f7dc6f;
+}
+
+.highlight .strong {
+  font-weight: bold;
+  color: #4ecdc4;
+}
+
+/* 行号样式 */
+.highlight .gutter {
+  color: #888;
+  border-right: 1px solid #333;
+  padding-right: 12px;
+  margin-right: 12px;
+  user-select: none;
+}
+
+.highlight .code {
+  padding-left: 4px;
+}
+
+/* 特定语言样式 */
+.highlight.javascript .keyword,
+.highlight.js .keyword {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.highlight.javascript .string,
+.highlight.js .string {
+  color: #4ecdc4;
+}
+
+.highlight.javascript .function,
+.highlight.js .function {
+  color: #45b7d1;
+  font-weight: 600;
+}
+
+.highlight.python .keyword {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.highlight.python .string {
+  color: #4ecdc4;
+}
+
+.highlight.python .comment {
+  color: #7c7c7c;
+}
+
+.highlight.css .selector-tag {
+  color: #45b7d1;
+  font-weight: 600;
+}
+
+.highlight.css .attribute {
+  color: #f7dc6f;
+}
+
+.highlight.css .string,
+.highlight.css .value {
+  color: #4ecdc4;
+}
+
+.highlight.html .tag {
+  color: #45b7d1;
+  font-weight: 600;
+}
+
+.highlight.html .attr {
+  color: #f7dc6f;
+}
+
+.highlight.html .string {
+  color: #4ecdc4;
+}
+
+/* 滚动条样式 */
+.highlight::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.highlight::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.highlight::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.highlight::-webkit-scrollbar-corner {
+  background: #2a2a2a;
+}

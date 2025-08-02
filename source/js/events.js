@@ -200,7 +200,6 @@ ZZZ.events = {
     // 刷新插件
     ZZZ.plugins.fancyBox();
     ZZZ.plugins.codeWidget();
-    ZZZ.plugins.anchorjs();
     
     // 重新初始化瀑布流
     if (window.zzzMasonry) {

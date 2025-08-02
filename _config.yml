@@ -45,19 +45,11 @@ iconfont:
 
 # 代码块配置
 code:
+  # 复制按钮功能
   copy_btn: true
-  language:
-    enable: true
-    default: "TEXT"
-  highlight:
-    enable: true
-    line_number: true
 
 # 图片功能
 image_zoom:
-  enable: true
-  
-image_caption:
   enable: true
 
 # 懒加载
@@ -92,35 +84,16 @@ post:
   banner_img_height: 70
   banner_mask_alpha: 0.3
   
-  # 相关文章
-  related_posts:
-    enable: false
-    limit: 5
-  
   # 上下文章导航
   prev_next: true
   
-  # 文章目录
-  toc:
-    enable: true
-    placement: right
-    auto_open: true
-    headingSelector: "h1,h2,h3,h4,h5,h6"
-    collapseDepth: 0
-  
-  # 文章元信息
+  # 文章元信息（仅显示作者和日期）
   meta:
     author:
       enable: true
     date:
       enable: true
       format: "LL a"
-    wordcount:
-      enable: false
-    min2read:
-      enable: false
-    views:
-      enable: false
 
 # 关于页
 about:

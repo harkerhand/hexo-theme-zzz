@@ -3,33 +3,23 @@
 ZZZ.plugins = {
   
   /**
-   * 代码复制功能
+   * 代码语言标识
    */
   codeWidget: function() {
-    if (!CONFIG.copy_btn) return;
-    
     var codeBlocks = ZZZ.utils.getElements('pre');
     codeBlocks.forEach(function(pre) {
-      if (pre.querySelector('.copy-btn')) return;
+      if (pre.hasAttribute('data-lang')) return;
       
-      var copyBtn = document.createElement('button');
-      copyBtn.className = 'copy-btn';
-      copyBtn.innerHTML = '<i class="iconfont icon-copy"></i>';
-      copyBtn.title = '复制代码';
-      
-      copyBtn.addEventListener('click', function() {
-        var code = pre.querySelector('code');
-        if (code) {
-          navigator.clipboard.writeText(code.textContent).then(function() {
-            copyBtn.innerHTML = '<i class="iconfont icon-check"></i>';
-            setTimeout(function() {
-              copyBtn.innerHTML = '<i class="iconfont icon-copy"></i>';
-            }, 2000);
-          });
+      // 添加语言标识
+      var codeElement = pre.querySelector('code');
+      if (codeElement) {
+        var lang = codeElement.className.match(/language-(\w+)/);
+        if (lang) {
+          pre.setAttribute('data-lang', lang[1].toUpperCase());
+        } else {
+          pre.setAttribute('data-lang', 'CODE');
         }
-      });
-      
-      pre.appendChild(copyBtn);
+      }
     });
   },
 
@@ -112,12 +102,5 @@ ZZZ.plugins = {
         searchResults.innerHTML = html;
       }, 300);
     });
-  },
-
-  /**
-   * 空函数，用于兼容性
-   */
-  typing: function() {},
-  anchorjs: function() {},
-  progressbar: function() {}
+  }
 };

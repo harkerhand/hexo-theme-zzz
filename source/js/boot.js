@@ -14,15 +14,12 @@ ZZZ.boot.registerEvents = function() {
 ZZZ.boot.refresh = function() {
   ZZZ.plugins.fancyBox();
   ZZZ.plugins.codeWidget();
-  ZZZ.plugins.anchorjs();
-  ZZZ.plugins.progressbar();
   ZZZ.events.refresh();
 };
 
 ZZZ.boot.init = function() {
   // 初始化插件
   ZZZ.plugins.localSearch();
-  ZZZ.plugins.progressbar();
   
   // 注册事件
   ZZZ.boot.registerEvents();
