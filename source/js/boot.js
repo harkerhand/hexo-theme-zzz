@@ -1,37 +1,37 @@
-/* global Travel */
+/* global ZZZ */
 
-Travel.boot = {};
+ZZZ.boot = {};
 
-Travel.boot.registerEvents = function() {
-  Travel.events.billboard();
-  Travel.events.registerNavbarEvent();
-  Travel.events.registerScrollDownArrowEvent();
-  Travel.events.registerScrollTopArrowEvent();
-  Travel.events.registerImageLoadedEvent();
-  Travel.events.registerSearchEvent();
+ZZZ.boot.registerEvents = function() {
+  ZZZ.events.billboard();
+  ZZZ.events.registerNavbarEvent();
+  ZZZ.events.registerScrollDownArrowEvent();
+  ZZZ.events.registerScrollTopArrowEvent();
+  ZZZ.events.registerImageLoadedEvent();
+  ZZZ.events.registerSearchEvent();
 };
 
-Travel.boot.refresh = function() {
-  Travel.plugins.fancyBox();
-  Travel.plugins.imageCaption();
-  Travel.plugins.codeWidget();
-  Travel.plugins.anchorjs();
-  Travel.plugins.progressbar();
-  Travel.events.refresh();
+ZZZ.boot.refresh = function() {
+  ZZZ.plugins.fancyBox();
+  ZZZ.plugins.imageCaption();
+  ZZZ.plugins.codeWidget();
+  ZZZ.plugins.anchorjs();
+  ZZZ.plugins.progressbar();
+  ZZZ.events.refresh();
 };
 
-Travel.boot.init = function() {
+ZZZ.boot.init = function() {
   // 初始化插件
-  Travel.plugins.localSearch();
-  Travel.plugins.progressbar();
+  ZZZ.plugins.localSearch();
+  ZZZ.plugins.progressbar();
   
   // 注册事件
-  Travel.boot.registerEvents();
+  ZZZ.boot.registerEvents();
   
   // 首次刷新
-  Travel.boot.refresh();
+  ZZZ.boot.refresh();
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  Travel.boot.init();
+  ZZZ.boot.init();
 });

@@ -28,28 +28,28 @@ module.exports = (hexo) => {
 
   if (hexo.locals.get instanceof Function) {
     const data = hexo.locals.get('data');
-    if (data && isNotEmptyObject(data.travel_config)) {
-      dataConfig = data.travel_config;
+    if (data && isNotEmptyObject(data.zzz_config)) {
+      dataConfig = data.zzz_config;
     }
   }
 
   if (isNotEmptyObject(hexo.config.theme_config)) {
     hexo.theme.config = merge({}, hexo.theme.config, hexo.config.theme_config);
     if (isZh) {
-      hexo.log.debug('[Travel] 读取 _config.yml 中 theme_config 配置项覆盖主题配置');
+      hexo.log.debug('[ZZZ] 读取 _config.yml 中 theme_config 配置项覆盖主题配置');
     } else {
-      hexo.log.debug('[Travel] Merge theme config from theme_config in _config.yml');
+      hexo.log.debug('[ZZZ] Merge theme config from theme_config in _config.yml');
     }
   }
 
   if (isNotEmptyObject(dataConfig)) {
     hexo.theme.config = merge({}, hexo.theme.config, dataConfig);
     if (isZh) {
-      hexo.log.debug('[Travel] 读取 source/_data/travel_config.yml 文件覆盖主题配置');
+      hexo.log.debug('[ZZZ] 读取 source/_data/zzz_config.yml 文件覆盖主题配置');
     } else {
-      hexo.log.debug('[Travel] Merge theme config from source/_data/travel_config.yml');
+      hexo.log.debug('[ZZZ] Merge theme config from source/_data/zzz_config.yml');
     }
   }
 
-  hexo.log.debug('[Travel] Output theme config:\n', JSON.stringify(hexo.theme.config, undefined, 2));
+  hexo.log.debug('[ZZZ] Output theme config:\n', JSON.stringify(hexo.theme.config, undefined, 2));
 };

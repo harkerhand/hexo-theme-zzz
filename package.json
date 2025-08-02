@@ -6,6 +6,7 @@
   "files": [
     "layout",
     "source",
+    "scripts",
     "_config.yml"
   ],
   "repository": {

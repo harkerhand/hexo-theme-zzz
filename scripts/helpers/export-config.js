@@ -27,9 +27,9 @@ hexo.extend.helper.register('export_config', function () {
     include_content_in_search: theme.search && theme.search.content || false,
   };
   
-  return `<script id="travel-configs">
-    var Travel = window.Travel || {};
-    Travel.ctx = Object.assign({}, Travel.ctx);
+  return `<script id="zzz-configs">
+    var ZZZ = window.ZZZ || {};
+    ZZZ.ctx = Object.assign({}, ZZZ.ctx);
     var CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;
 });
