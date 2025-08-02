@@ -30,7 +30,7 @@ media:
 
 # 用户信息卡片配置
 author_info:
-  avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=2097853195&spec=4'
+  avatar: /img/logo_circle.png
   level: 60
   exp_current: 114514
   exp_total: 9999999
@@ -141,7 +141,7 @@ about:
   intro: "一个绝区零风格的博客主题"
   avatar: img/logo_circle.png
   icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
+    - { class: "iconfont icon-github-fill", link: "https://github.com/harkerhand", tip: "GitHub" }
     - { class: "iconfont icon-mail", link: "mailto:harkerhand@outlook.com", tip: "邮箱" }
 
 # 友链页
