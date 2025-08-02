@@ -231,6 +231,40 @@
   color: #6bbd00;
 }
 
+/* 分类云样式 */
+.category-cloud {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 2rem;
+  background: #1e1e1e;
+  border-radius: 15px;
+  border: 4px solid #383838;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 2.5;
+}
+
+.category-cloud-item {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+}
+
+.category-cloud-item:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(107, 189, 0, 0.3);
+  border-color: #6bbd00;
+  background: rgba(107, 189, 0, 0.1);
+  color: #6bbd00 !important;
+}
+
 /* 404 页面样式 */
 .error-content {
   text-align: center;
@@ -433,19 +467,21 @@
     font-size: 0.9rem !important;
   }
   
+  .category-cloud {
+    padding: 1.5rem 1rem;
+    margin: 20px auto;
+  }
+  
+  .category-cloud-item {
+    margin: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem !important;
+  }
+  
   .category-item {
     margin-bottom: 1.5rem;
   }
   
-  .category-name {
-    padding: 1rem 1.2rem;
-    font-size: 1.2rem;
-  }
-  
-  .category-posts {
-    padding: 1rem 1.2rem;
-  }
-
   .category-name {
     padding: 1rem 1.2rem;
     font-size: 1.2rem;

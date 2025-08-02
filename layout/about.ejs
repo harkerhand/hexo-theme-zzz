@@ -11,7 +11,7 @@ page.banner_img = theme.about && theme.about.banner_img || theme.default_cover_i
 <%- partial('_partial/banner', {
   title: page.title,
   subtitle: page.subtitle,
-  banner_img: config.root + page.banner_img
+  banner_img: url_handler(page.banner_img)
 }) %>
 
 <!-- About Content -->

@@ -1,7 +1,7 @@
 <%
 item.title = item.title || theme.default_post_title || "无标题文档";
 item.subtitle = item.subtitle || item.title
-item.banner_img = item.banner_img ? (config.root + item.banner_img) : theme.post.banner_img;
+item.banner_img = item.banner_img ? url_handler(item.banner_img) : url_handler(theme.post.banner_img);
 %>
 
 <div class="img-container">

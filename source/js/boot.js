@@ -13,7 +13,6 @@ ZZZ.boot.registerEvents = function() {
 
 ZZZ.boot.refresh = function() {
   ZZZ.plugins.fancyBox();
-  ZZZ.plugins.imageCaption();
   ZZZ.plugins.codeWidget();
   ZZZ.plugins.anchorjs();
   ZZZ.plugins.progressbar();

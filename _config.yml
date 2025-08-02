@@ -39,6 +39,9 @@ author_info:
 # 图标字体 - 根据实际使用情况保留必要的字体
 iconfont:
   - //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
+  - //at.alicdn.com/t/c/font_4823232_6grnmuy6d4c.css
+  - //at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css
+
 
 # 代码块配置
 code:
@@ -123,7 +126,7 @@ post:
 about:
   enable: true
   title: "关于"
-  subtitle: "关于我"
+  subtitle: ""
   banner_img: img/background.jpg
   banner_img_height: 60
   name: "ZZZ Blog"
@@ -137,11 +140,11 @@ about:
 links:
   enable: true
   title: "友链"
-  subtitle: "朋友们"
+  subtitle: ""
   banner_img: img/background.jpg
   banner_img_height: 60
   items:
-    - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/images/hexo.png" }
+    - { title: "Hexo", intro: "快速、简洁且高效的博客框架", link: "https://hexo.io", avatar: "/img/hexo.png" }
   onerror_avatar: img/logo_circle.png
   custom:
     enable: false
@@ -151,7 +154,7 @@ links:
 category:
   enable: true
   title: "分类"
-  subtitle: "文章分类"
+  subtitle: ""
   banner_img: img/background.jpg
   banner_img_height: 60
   order_by: "-length"
@@ -163,7 +166,7 @@ category:
 tag:
   enable: true
   title: "标签"
-  subtitle: "标签云"
+  subtitle: ""
   banner_img: img/background.jpg
   banner_img_height: 80
   tagcloud:

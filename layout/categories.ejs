@@ -8,36 +8,53 @@ page.banner_img = theme.category && theme.category.banner_img || theme.default_c
 <%- partial('_partial/banner', {
   title: page.title,
   subtitle: page.subtitle,
-  banner_img: config.root + page.banner_img
+  banner_img: url_handler(page.banner_img)
 }) %>
 
 <!-- Categories Content -->
 <div class="content-container">
-  <div class="category-list">
-    <% site.categories.each(function(category) { %>
-      <% if (category.posts.length > 0) { %>
-        <div class="category-item">
-          <h3 class="category-name">
-            <a href="<%= url_for(category.path) %>">
-              <%= category.name %>
-              <span class="category-count">(<%= category.posts.length %>)</span>
-            </a>
-          </h3>
-          <div class="category-posts">
-            <% category.posts.sort('date', -1).limit(5).each(function(post) { %>
-              <div class="category-post">
-                <a href="<%= url_for(post.path) %>"><%= post.title %></a>
-                <span class="post-date"><%= date(post.date, 'MM-DD') %></span>
-              </div>
-            <% }); %>
-            <% if (category.posts.length > 5) { %>
-              <div class="category-more">
-                <a href="<%= url_for(category.path) %>">查看更多 (<%= category.posts.length - 5 %>)</a>
-              </div>
-            <% } %>
-          </div>
-        </div>
-      <% } %>
+  <div class="category-cloud">
+    <% 
+    var categoriesData = [];
+    site.categories.each(function(category) {
+      if (category.posts.length > 0) {
+        categoriesData.push({
+          name: category.name,
+          count: category.posts.length,
+          path: category.path
+        });
+      }
+    });
+    
+    // 计算分类云字体大小
+    var maxCount = Math.max.apply(Math, categoriesData.map(function(category) { return category.count; }));
+    var minCount = Math.min.apply(Math, categoriesData.map(function(category) { return category.count; }));
+    var minFont = theme.category && theme.category.categorycloud && theme.category.categorycloud.min_font || 15;
+    var maxFont = theme.category && theme.category.categorycloud && theme.category.categorycloud.max_font || 30;
+    var unit = theme.category && theme.category.categorycloud && theme.category.categorycloud.unit || 'px';
+    
+    // 预定义颜色数组
+    var colors = ['#BBBBEE', '#9999DD', '#7777CC', '#5555BB', '#337ab7', '#225599', '#114488'];
+    %>
+    
+    <% categoriesData.forEach(function(category) { %>
+      <% 
+      // 计算字体大小
+      var fontSize = minFont;
+      if (maxCount > minCount) {
+        fontSize = minFont + (maxFont - minFont) * (category.count - minCount) / (maxCount - minCount);
+      }
+      
+      // 根据文章数量选择颜色
+      var colorIndex = Math.min(Math.floor((category.count - minCount) / Math.max(1, (maxCount - minCount)) * colors.length), colors.length - 1);
+      var color = colors[colorIndex];
+      %>
+      <a href="<%= url_for(category.path) %>" 
+         class="category-cloud-item" 
+         style="font-size: <%= Math.round(fontSize) %><%= unit %>; color: <%= color %>;"
+         title="<%= category.name %> (<%= category.count %> 篇文章)">
+        <%= category.name %>
+      </a>
     <% }); %>
   </div>
 </div>

@@ -199,7 +199,6 @@ ZZZ.events = {
   refresh: function() {
     // 刷新插件
     ZZZ.plugins.fancyBox();
-    ZZZ.plugins.imageCaption();
     ZZZ.plugins.codeWidget();
     ZZZ.plugins.anchorjs();
     

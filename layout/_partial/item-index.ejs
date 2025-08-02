@@ -1,7 +1,7 @@
 <div class="index-item">
   <div class="hovereffect">
     <a href="<%- config.root %><%- item.path %>">
-      <img class="index-img" src="<%= (item.index_img || theme.default_cover_image).startsWith('http') ? (item.index_img || theme.default_cover_image).replace(/^\\/, '') : (config.root + (item.index_img || theme.default_cover_image).replace(/^\\/, '')) %>"
+      <img class="index-img" src="<%- url_handler(item.index_img || theme.default_cover_image) %>"
         alt="<%- item.title || theme.default_post_title || "无标题文档" %>">
       <div class="overlay">
         <span class="overlay-text"><%- item.title || theme.default_post_title || "无标题文档" %></span>
